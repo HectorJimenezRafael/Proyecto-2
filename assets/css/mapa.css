@@ -1,0 +1,21 @@
+* {
+    font-family: 'Aref Ruqaa Ink', serif;
+    font-family: 'Montserrat', sans-serif;
+}
+.mapa{
+    width: 100vw;
+    padding-top: 5px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #c7daD4;
+}
+
+#mapa_canvas{
+    height: auto;
+    width: 70%;
+    /* background-image: url("../../assets/img/recursos/mapa.png"); */
+    
+}

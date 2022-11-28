@@ -1,0 +1,383 @@
+/* * {
+    box-sizing: border-box; */
+
+
+/* scroll-behavior: inherit;
+    scroll-behavior: initial;
+    scroll-behavior: unset; */
+
+
+/* }
+::-webkit-scrollbar {
+    display: none;
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+} */
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* ---------- ERIC MEYER'S RESET CSS ---------- */
+
+
+/* ---------- https://meyerweb.com/eric/tools/css/reset/ ---------- */
+
+@import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
+
+/* ---------- FONTAWESOME ---------- */
+
+[class*="fontawesome-"]:before {
+    font-family: "FontAwesome", sans-serif;
+}
+
+
+/* ---------- GENERAL ---------- */
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Aref Ruqaa Ink', serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.log-body {
+    /* background-image: url(https://www.brandemia.org//sites/default/files/inline/images/5.gif); */
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #606468;
+    font: 87.5%/1.5em "Open Sans", sans-serif;
+    margin: 0;
+}
+
+.log-a {
+    color: #eee;
+    text-decoration: none;
+}
+
+.log-a:hover {
+    text-decoration: underline;
+}
+
+.log-input {
+    border: none;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    padding: 0;
+    -webkit-appearance: none;
+}
+
+.container {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.container h1 {
+    font-size: 4vw;
+    color: white;
+    margin-bottom: 10%;
+    /* text-align: center; */
+}
+
+.container img {
+    width: 40%;
+}
+
+
+/* ---------- LOGIN ---------- */
+
+#login {
+    width: 280px;
+}
+
+#login form span {
+    background-color: #363b41;
+    border-radius: 3px 0px 0px 3px;
+    color: #606468;
+    display: block;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 50px;
+}
+
+#login form input {
+    height: 50px;
+}
+
+.alerts {
+    color: #d7a424;
+    display: none;
+    padding: 2px;
+    font-size: 12px;
+}
+
+#login form input[type="text"],
+input[type="password"] {
+    background-color: #3b4148;
+    border-radius: 0px 3px 3px 0px;
+    color: #606468;
+    margin-bottom: 1em;
+    padding: 0 16px;
+    width: 230px;
+}
+
+#login form input[type="submit"] {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: #3894a3;
+    color: #eee;
+    font-weight: bold;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+    width: 280px;
+}
+
+.boton-ini {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: #3894a3;
+    color: #eee;
+    font-weight: bold;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+    width: 280px;
+    height: 45px;
+    font-size: 20px;
+}
+
+.encima {
+    display: none;
+}
+
+.boton-ini:hover {
+    background-color: #3894a3;
+    cursor: pointer;
+}
+
+.boton-ini:hover .encima {
+    display: block;
+}
+
+.boton-ini:hover .sin_encima {
+    display: none;
+}
+
+
+/* Background */
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: #505050;
+    overflow: hidden;
+}
+
+.background li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 10s linear infinite;
+}
+
+.background li:nth-child(0) {
+    left: 30%;
+    width: 212px;
+    height: 212px;
+    bottom: -212px;
+    animation-delay: 1s;
+}
+
+.background li:nth-child(1) {
+    left: 16%;
+    width: 305px;
+    height: 305px;
+    bottom: -305px;
+    animation-delay: 0s;
+}
+
+.background li:nth-child(2) {
+    left: 17%;
+    width: 293px;
+    height: 293px;
+    bottom: -293px;
+    animation-delay: 5s;
+}
+
+.background li:nth-child(3) {
+    left: 49%;
+    width: 217px;
+    height: 217px;
+    bottom: -217px;
+    animation-delay: 7s;
+}
+
+.background li:nth-child(4) {
+    left: 42%;
+    width: 120px;
+    height: 120px;
+    bottom: -120px;
+    animation-delay: 4s;
+}
+
+.background li:nth-child(5) {
+    left: 37%;
+    width: 271px;
+    height: 271px;
+    bottom: -271px;
+    animation-delay: 10s;
+}
+
+.background li:nth-child(6) {
+    left: 48%;
+    width: 114px;
+    height: 114px;
+    bottom: -114px;
+    animation-delay: 14s;
+}
+
+.background li:nth-child(7) {
+    left: 63%;
+    width: 278px;
+    height: 278px;
+    bottom: -278px;
+    animation-delay: 9s;
+}
+
+.background li:nth-child(8) {
+    left: 58%;
+    width: 150px;
+    height: 150px;
+    bottom: -150px;
+    animation-delay: 11s;
+}
+
+.background li:nth-child(9) {
+    left: 36%;
+    width: 146px;
+    height: 146px;
+    bottom: -146px;
+    animation-delay: 25s;
+}
+
+.background li:nth-child(10) {
+    left: 86%;
+    width: 165px;
+    height: 165px;
+    bottom: -165px;
+    animation-delay: 20s;
+}
+
+.background li:nth-child(11) {
+    left: 28%;
+    width: 218px;
+    height: 218px;
+    bottom: -218px;
+    animation-delay: 25s;
+}
+
+.background li:nth-child(12) {
+    left: 82%;
+    width: 244px;
+    height: 244px;
+    bottom: -244px;
+    animation-delay: 8s;
+}
+
+.background li:nth-child(13) {
+    left: 42%;
+    width: 107px;
+    height: 107px;
+    bottom: -107px;
+    animation-delay: 40s;
+}
+
+.background li:nth-child(14) {
+    left: 61%;
+    width: 221px;
+    height: 221px;
+    bottom: -221px;
+    animation-delay: 21s;
+}
+
+.background li:nth-child(15) {
+    left: 57%;
+    width: 192px;
+    height: 192px;
+    bottom: -192px;
+    animation-delay: 1s;
+}
+
+.background li:nth-child(16) {
+    left: 63%;
+    width: 280px;
+    height: 280px;
+    bottom: -280px;
+    animation-delay: 7s;
+}
+
+.background li:nth-child(17) {
+    left: 44%;
+    width: 300px;
+    height: 300px;
+    bottom: -300px;
+    animation-delay: 44s;
+}
+
+.background li:nth-child(18) {
+    left: 22%;
+    width: 301px;
+    height: 301px;
+    bottom: -301px;
+    animation-delay: 39s;
+}
+
+@media screen and (max-width: 600px) {
+    .container h1 {
+        font-size: 10vw;
+    }
+    .container img {
+        width: 60%;
+    }
+}

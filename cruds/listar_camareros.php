@@ -1,0 +1,57 @@
+<?php
+require_once '../include/connection.php';
+//$consulta=null;
+// $_POST['buscar_nombre']="S";
+// if (!empty($_POST['buscar_nombre'])) {
+//     $flitro_nombre=$_POST['buscar_nombre'];
+// } else {
+//     $flitro_nombre="";
+// }
+
+// if (!empty($_POST['buscar_apellido'])) {
+//     $flitro_apellido=$_POST['buscar_apellido'];
+// } else {
+//     $flitro_apellido="";
+// }
+// $_POST['buscar_nombre']="S";
+
+if(!empty($_POST['buscar_nombre'])  ){
+
+    $flitro_nombre=$_POST['buscar_nombre'];
+    $flitro_apellido=$_POST['buscar_apellido'];
+
+    $consulta = $pdo->prepare("SELECT * FROM tbl_usuarios WHERE usuario_tipo=1 AND usuario_nombre LIKE '%".$flitro_nombre."%' AND Apellido LIKE '%".$flitro_apellido."%'");
+
+
+    $consulta->execute();
+} else if (!empty($_POST['buscar_apellido']) ) {
+    $flitro_nombre=$_POST['buscar_nombre'];
+    $flitro_apellido=$_POST['buscar_apellido'];
+
+    $consulta = $pdo->prepare("SELECT * FROM tbl_usuarios WHERE usuario_tipo=1 AND usuario_nombre LIKE '%".$flitro_nombre."%' AND Apellido LIKE '%".$flitro_apellido."%'");
+
+
+    $consulta->execute();
+
+} else if(empty($_POST['buscar_nombre']) && empty($_POST['buscar_apellido'])){
+    //echo 'hola';
+    $consulta = $pdo->prepare("SELECT * FROM tbl_usuarios WHERE usuario_tipo=1");
+    $consulta->execute();
+    
+}
+
+
+$resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+echo json_encode($resultado);
+/*foreach ($resultado as $data) {
+    echo "<tr>
+            <td>" . $data['id'] . "</td>
+            <td>" . $data['producto'] . "</td>
+            <td>" . $data['precio'] . "</td>
+            <td>" . $data['cantidad'] . "</td>
+            <td>
+                <button type='button' class='btn btn-success' onclick=Editar('" . $data['id'] . "')>Editar</button>
+                <button type='button' class='btn btn-danger' onclick=Eliminar('" . $data['id'] . "')>Eliminar</button>
+            </td>        
+        </tr>";
+}*/
