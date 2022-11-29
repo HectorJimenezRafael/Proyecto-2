@@ -98,7 +98,7 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
 <?php
 foreach ($resultado as $uwu ) {
   ?>
-  <option value="<?php echo $uwu['id']; ?>"><?php echo $uwu['lugar_recurso']; ?></option>
+
  
   <?php
 }

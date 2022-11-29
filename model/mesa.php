@@ -51,7 +51,7 @@ class Mesas {
 
         $where='';
 
-        $sql="SELECT lugar_recurso as lugar FROM bd_p1.tbl_lugar;";
+        $sql="SELECT lugar_recurso as lugar FROM tbl_lugar;";
 
         $stmt = mysqli_stmt_init($conexion);
         mysqli_stmt_prepare($stmt,$sql);

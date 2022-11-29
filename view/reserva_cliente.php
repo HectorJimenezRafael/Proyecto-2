@@ -82,7 +82,7 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
             </p>
             <p>
             <label>Fecha</label>
-                <input type="date" name="fecha">
+                <input type="date" min="<?php echo date("Y-m-d");?>" name="fecha">
                 
             </p>
             <p>

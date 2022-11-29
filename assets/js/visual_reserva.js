@@ -1,26 +1,18 @@
-// window.onload = async function() {
-//     let resul = await axios.get('../controller/lugar_controller.php');
-//     for (let i = 0; i < resul.data.length; i++) {
+window.onload = async function() {
+    let resul = await axios.get('../controller/lugar_controller.php');
+    for (let i = 0; i < resul.data.length; i++) {
 
-//         select = document.getElementById('lugar');
-
-
-//         var opt = document.createElement('option');
-//         opt.value = `%${resul.data[i][0]}%`;
-//         opt.innerHTML = resul.data[i][0];
-//         select.appendChild(opt);
+        select = document.getElementById('lugar');
 
 
-//     }
-// }
+        var opt = document.createElement('option');
+        opt.value = `%${resul.data[i][0]}%`;
+        opt.innerHTML = resul.data[i][0];
+        select.appendChild(opt);
 
 
-
-setInterval(function() {
-    getMesas('');
-
-}, 10000);
-
+    }
+}
 
 
 const getMesas = async() => {
