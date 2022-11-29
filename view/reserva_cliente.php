@@ -54,25 +54,25 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
         
         <form action="../func_online/registrar_online.php" method="POST">
             <p>
-                <label>Nombre</label>
+                <label>Nombre <i class="fa-solid fa-address-card"></i></label>
                 <input type="text" name="Nombre">
             </p>
             <p>
-                <label>Apellido</label>
+                <label>Apellido <i class="fa-solid fa-address-card"></i></label>
                 <input type="text" name="Apellido">
             </p>
             <p>
-            <label>Correo</label>
+            <label>Correo <i class="fa-solid fa-envelope"></i></label>
                 <input type="email" name="correo">
             </p>
             <p>
-            <label>Teléfono</label>
+            <label>Teléfono <i class="fa-solid fa-phone"></i></label>
                 <input type="tel" name="phone">
                 
             </p>
             <p>
-            <label>Personas</label>
-                <select name="personas" id="personas">
+            <label>Personas <i class="fa-solid fa-users"></i></label>
+                <select name="personas" id="personas" class="select-css">
 <option value="2">2</option>
 <option value="4">4</option>
 <option value="6">6</option>
@@ -81,13 +81,13 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
                 
             </p>
             <p>
-            <label>Fecha</label>
+            <label>Fecha <i class="fa-solid fa-calendar-days"></i></label>
                 <input type="date" min="<?php echo date("Y-m-d");?>" name="fecha">
                 
             </p>
             <p>
-            <label>Lugar</label>
-            <select name="lugar" id="lugar">
+            <label>Lugar <i class="fa-solid fa-map-location-dot"></i> </label>
+            <select name="lugar" id="lugar" class="select-css">
             <?php
 foreach ($resultado as $uwu ) {
   ?>
@@ -112,8 +112,8 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
             <p>
-            <label>Hora</label>
-            <select name="hora" id="hora">
+            <label>Hora <i class="fa-solid fa-clock"></i></label>
+            <select name="hora" id="hora" class="select-css">
             <?php
 foreach ($resultado as $uwu ) {
   ?>
@@ -132,19 +132,19 @@ foreach ($resultado as $uwu ) {
             </p> -->
             <p class="block">
                 <button type="submit" >
-                    Send
+                    RESERVAR <i class="fa-solid fa-arrows-to-circle"></i>
                 </button>
             </p>
             
            
         </form>
-        <p class="block">
+        
            
-           <button>
-           <a href="login.php">Volver</a>
+           <button class="boton">
+           <a href="login.php">Volver <i class="fa-solid fa-arrow-left-long"></i></a>
            </button>
            
-       </p>
+       
     </div>
     <div class="contact-info">
        
@@ -174,7 +174,7 @@ if ($_GET['mesas']=='si') {
 Swal.fire({
     background:'#486b7c',
     color:'white',
-    icon: 'error',
+    icon: 'success',
     title: 'RESERVADA REALIZADA',
     text: 'LE ESPERAMOS'
 
