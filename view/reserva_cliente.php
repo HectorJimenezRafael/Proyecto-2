@@ -30,6 +30,18 @@ session_start();
 session_destroy();
 ?>
 
+<?php
+require_once '../include/connection.php';
+$sql="SELECT * FROM tbl_lugar;";
+
+$query = $pdo->prepare($sql);
+
+$query->execute();
+
+$resultado = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
 
 
 
@@ -40,7 +52,7 @@ session_destroy();
 <div class="contact-wrapper animated bounceInUp">
     <div class="contact-form">
         
-        <form action="lol.php" method="POST">
+        <form action="../func_online/registrar_online.php" method="POST">
             <p>
                 <label>Nombre</label>
                 <input type="text" name="Nombre">
@@ -60,7 +72,12 @@ session_destroy();
             </p>
             <p>
             <label>Personas</label>
-                <input type="tel" name="personas">
+                <select name="personas" id="personas">
+<option value="2">2</option>
+<option value="4">4</option>
+<option value="6">6</option>
+<option value="8">8</option>
+                </select>
                 
             </p>
             <p>
@@ -70,13 +87,42 @@ session_destroy();
             </p>
             <p>
             <label>Lugar</label>
-                <input type="text" name="lugar" >
-                
+            <select name="lugar" id="lugar">
+            <?php
+foreach ($resultado as $uwu ) {
+  ?>
+  <option value="<?php echo $uwu['id']; ?>"><?php echo $uwu['lugar_recurso']; ?></option>
+ 
+  <?php
+}
+?>
+</select>
             </p>
+            <?php
+
+$sql="SELECT * FROM tbl_horas;";
+
+$query = $pdo->prepare($sql);
+
+$query->execute();
+
+$resultado = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
 
             <p>
             <label>Hora</label>
-                <input type="text" name="lugar" >
+            <select name="hora" id="hora">
+            <?php
+foreach ($resultado as $uwu ) {
+  ?>
+  <option value="<?php echo $uwu['id']; ?>"><?php echo $uwu['hora']; ?></option>
+ 
+  <?php
+}
+?>
+</select>
                 
             </p>
             <!-- <p class="block">
@@ -119,18 +165,42 @@ session_destroy();
 
 <!-- SWEET ALERTS -->
 
-<!-- Nombre, contra o ambas incorrectas -->
+<!-- MESA DISPONIBLE -->
 <?php
-if (isset($_GET['error'])) {
-if ($_GET['error']=='true') {
+if (isset($_GET['mesas'])) {
+if ($_GET['mesas']=='si') {
     ?>
     <script>
 Swal.fire({
     background:'#486b7c',
     color:'white',
     icon: 'error',
-    title: 'UPS...',
-    text: 'Nombre de usuario o contraseña incorrectas'
+    title: 'RESERVADA REALIZADA',
+    text: 'LE ESPERAMOS'
+
+
+})
+
+    </script>
+    <?php
+}
+}
+
+?>
+
+
+<!-- MESA NO DISPONIBLE-->
+<?php
+if (isset($_GET['mesas'])) {
+if ($_GET['mesas']=='no') {
+    ?>
+    <script>
+Swal.fire({
+    background:'#486b7c',
+    color:'white',
+    icon: 'error',
+    title: 'LO SENTIMOS',
+    text: 'No hay más mesas disponibles con estás caracteríticas'
 
 
 })

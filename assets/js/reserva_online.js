@@ -17,5 +17,12 @@ window.onload = function() {
         }
         ajax.send();
     }
-    reserva_online();
+    reserva_online('');
+
+
 }
+
+setInterval(function() {
+    reserva_online('');
+
+}, 10000);

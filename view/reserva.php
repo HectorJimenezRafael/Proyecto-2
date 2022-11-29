@@ -81,9 +81,32 @@ session_start();
 <input class="numero-clientes" type="number" id="clientes" placeholder="Nº de clientes" min=1> 
 </div>
 
+
+<?php
+require_once '../include/connection.php';
+$sql="SELECT * FROM tbl_lugar;";
+
+$query = $pdo->prepare($sql);
+
+$query->execute();
+
+$resultado = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
+
+<?php
+foreach ($resultado as $uwu ) {
+  ?>
+  <option value="<?php echo $uwu['id']; ?>"><?php echo $uwu['lugar_recurso']; ?></option>
+ 
+  <?php
+}
+?>
 <div class="column-3_reserva">
     <select class="custom-select" name=lugar id=lugar>
       <option value="%">Todos</option>
+
     </select>
     </div>
     <div class="column-3_reserva">
