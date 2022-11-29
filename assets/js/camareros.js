@@ -1,6 +1,41 @@
-ListarProductos('');
+ListarProductos('', '', '', '');
 
-function ListarProductos(buscar_nombre, buscar_apellido) {
+
+
+
+
+function mostrar() {
+    if (document.getElementById('buscar_nombre').style.display == 'none') {
+        document.getElementById('buscar_nombre').style.display = 'block';
+    } else {
+        document.getElementById('buscar_nombre').style.display = 'none';
+    }
+
+
+    if (document.getElementById('buscar_apellido').style.display == 'none') {
+        document.getElementById('buscar_apellido').style.display = 'block';
+    } else {
+        document.getElementById('buscar_apellido').style.display = 'none';
+    }
+
+
+    if (document.getElementById('buscar_correo').style.display == 'none') {
+        document.getElementById('buscar_correo').style.display = 'block';
+    } else {
+        document.getElementById('buscar_correo').style.display = 'none';
+    }
+
+
+    if (document.getElementById('buscar_telefono').style.display == 'none') {
+        document.getElementById('buscar_telefono').style.display = 'block';
+    } else {
+        document.getElementById('buscar_telefono').style.display = 'none';
+    }
+
+}
+
+
+function ListarProductos(buscar_nombre, buscar_apellido, buscar_correo, buscar_telefono) {
 
     var resultado = document.getElementById('resultado');
     //var frmbusqueda=document.getElementById('frmbusqueda');
@@ -8,6 +43,8 @@ function ListarProductos(buscar_nombre, buscar_apellido) {
 
     formdata.append('buscar_nombre', buscar_nombre);
     formdata.append('buscar_apellido', buscar_apellido);
+    formdata.append('buscar_correo', buscar_correo);
+    formdata.append('buscar_telefono', buscar_telefono);
 
     var ajax = new XMLHttpRequest();
     ajax.open('POST', '../cruds/listar_camareros.php');
@@ -46,7 +83,8 @@ function ListarProductos(buscar_nombre, buscar_apellido) {
 
 window.onload = function() {
     console.log('hola');
-    ListarProductos('');
+    ListarProductos('', '', '', '');
+
 
 };
 
@@ -54,20 +92,49 @@ window.onload = function() {
 buscar_nombre.addEventListener("keyup", () => {
     const valor_nombre = buscar_nombre.value;
     const valor_apellido = buscar_apellido.value;
-    if (buscar_nombre == "" || buscar_apellido == "") {
-        ListarProductos('');
+    const valor_correo = buscar_correo.value;
+    const valor_telefono = buscar_telefono.value;
+    if (buscar_nombre == "" || buscar_apellido == "" || buscar_correo == "" || buscar_telefono == "") {
+        ListarProductos('', '', '', '');
     } else {
-        ListarProductos(valor_nombre, valor_apellido);
+        ListarProductos(valor_nombre, valor_apellido, valor_correo, valor_telefono);
     }
 });
 
 buscar_apellido.addEventListener("keyup", () => {
     const valor_nombre = buscar_nombre.value;
     const valor_apellido = buscar_apellido.value;
-    if (buscar_apellido == "" || buscar_nombre == "") {
-        ListarProductos('');
+    const valor_correo = buscar_correo.value;
+    const valor_telefono = buscar_telefono.value;
+    if (buscar_apellido == "" || buscar_nombre == "" || buscar_correo == "" || buscar_telefono == "") {
+        ListarProductos('', '', '', '');
     } else {
-        ListarProductos(valor_nombre, valor_apellido);
+        ListarProductos(valor_nombre, valor_apellido, valor_correo, valor_telefono);
+    }
+});
+
+
+buscar_correo.addEventListener("keyup", () => {
+    const valor_nombre = buscar_nombre.value;
+    const valor_apellido = buscar_apellido.value;
+    const valor_correo = buscar_correo.value;
+    const valor_telefono = buscar_telefono.value;
+    if (buscar_apellido == "" || buscar_nombre == "" || buscar_correo == "" || buscar_telefono == "") {
+        ListarProductos('', '', '', '');
+    } else {
+        ListarProductos(valor_nombre, valor_apellido, valor_correo, valor_telefono);
+    }
+});
+
+buscar_telefono.addEventListener("keyup", () => {
+    const valor_nombre = buscar_nombre.value;
+    const valor_apellido = buscar_apellido.value;
+    const valor_correo = buscar_correo.value;
+    const valor_telefono = buscar_telefono.value;
+    if (buscar_apellido == "" || buscar_nombre == "" || buscar_correo == "" || buscar_telefono == "") {
+        ListarProductos('', '', '', '');
+    } else {
+        ListarProductos(valor_nombre, valor_apellido, valor_correo, valor_telefono);
     }
 });
 
@@ -95,7 +162,7 @@ function Eliminar(id) {
                 if (ajax.status === 200) {
 
                     if (ajax.responseText == "ok") {
-                        ListarProductos('');
+                        ListarProductos('', '', '', '');
                         Swal.fire({
                             icon: 'success',
                             title: 'Eliminado',
@@ -137,7 +204,7 @@ registrar.addEventListener("click", () => {
                 });
                 document.getElementById('registrar').value = "registrar";
                 form.reset();
-                ListarProductos('');
+                ListarProductos('', '', '', '');
             } else if (ajax.responseText == "vacio") {
                 Swal.fire({
                     icon: 'error',
@@ -147,7 +214,7 @@ registrar.addEventListener("click", () => {
                 });
                 document.getElementById('registrar').value = "registrar";
                 form.reset();
-                ListarProductos('');
+                ListarProductos('', '', '', '');
             } else if (ajax.responseText == "mal_formato") {
                 Swal.fire({
                     icon: 'error',
@@ -157,7 +224,7 @@ registrar.addEventListener("click", () => {
                 });
                 document.getElementById('registrar').value = "registrar";
                 form.reset();
-                ListarProductos('');
+                ListarProductos('', '', '', '');
             } else if (ajax.responseText == "repetido") {
                 Swal.fire({
                     icon: 'error',
@@ -167,7 +234,7 @@ registrar.addEventListener("click", () => {
                 });
                 document.getElementById('registrar').value = "registrar";
                 form.reset();
-                ListarProductos('');
+                ListarProductos('', '', '', '');
             } else {
                 Swal.fire({
                     icon: 'success',
@@ -177,7 +244,7 @@ registrar.addEventListener("click", () => {
                 });
                 registrar.value = "Registrar";
                 idp.value = "";
-                ListarProductos('');
+                ListarProductos('', '', '', '');
                 form.reset();
             }
         } else {
@@ -210,7 +277,7 @@ function Editar(id) {
             document.getElementById('apellido').value = json.Apellido;
             document.getElementById('telefono').value = json.telefono;
             document.getElementById('correo').value = json.correo;
-            document.getElementById('passwd').value = json.usuario_password;
+
             document.getElementById('registrar').value = "Actualizar"
         }
     }

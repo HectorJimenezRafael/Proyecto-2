@@ -45,6 +45,7 @@ session_start();
 <nav>
   <ul class="menu">
   <li class="logo"><img src="../assets//img/logo.png" width="40px"></li>
+  <li class="item button"><a href="./inicio.php"><i class="fa-solid fa-arrow-left"></i></a></li>
     <li class="item"><a href="../include/cerrar_sesion.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
     
     <?php
@@ -72,35 +73,60 @@ session_start();
 </nav>
 
 <br>
+<?php
+if ($_SESSION['admin']!=1) {
+    ?>
 <br>
 <div class="caja">
-<a href="camareros.php">Camareros </a> <i class="fa-solid fa-users"></i>  <i class="fa-solid fa-utensils"></i>
-</div>
+<form action="../include/update_contra.php" method="post">
 
+<input type="text" name="correo" placeholder="Correo">
+<br>
+<input type="text" name="contra_antigua" placeholder="Contraseña antigua">
+<br>
+<input type="text" name="contra_nueva" placeholder="Contraseña nueva">
+<br>
+<br>
+<input type="submit" value="Cambiar">
+
+</form>
+</div>
+<?php
+    }
+    ?>
+
+
+<?php
+if ($_SESSION['admin']==1) {
+    ?>
+<br>
 <div class="caja">
-<a href="mantenimiento.php">Personal de mantenimieto</a> <i class="fa-solid fa-users"></i> <i class="fa-solid fa-circle-exclamation"></i>
+<form action="../include/update_contra.php" method="post">
+
+<input type="text" name="correo" placeholder="Correo">
+<br>
+
+<br>
+<input type="text" name="contra_nueva" placeholder="Contraseña nueva">
+<br>
+<br>
+<input type="submit" value="Cambiar">
+
+</form>
 </div>
-
-<div class="caja">
-<a href="mesas.php">Mesas</a> <i class="fa-solid fa-chair"></i> <i class="fa-solid fa-pen-to-square"></i>
-</div>
-
+<?php
+    }
+    ?>
 
 
-<div class="caja">
-<a href="principal.php">Principal</a> <i class="fa-solid fa-house"></i>
-</div>
 
-<div class="caja">
-<a href="cambiar_con.php">Cambiar contraseña</a> <i class="fa-solid fa-unlock"></i> <i class="fa-solid fa-pen-to-square"></i>
-</div>
 
 
 <!-- sweetalert2 -->
 
 
  <!-- ACCESO DENEGADO -->
-<?php
+ <?php
 if (isset($_GET['en'])) {
 if ($_GET['en']=='no') {
     ?>
@@ -122,7 +148,75 @@ Swal.fire({
 
 ?>
 
+<!-- campos vacio -->
+<?php
+if (isset($_GET['vacio'])) {
+if ($_GET['vacio']=='true') {
+    ?>
+    <script>
+Swal.fire({
+    background:'#486b7c',
+    color:'white',
+    icon: 'error',
+    title: 'UPS...',
+    text: 'Campos vacíos'
 
+
+})
+
+    </script>
+    <?php
+}
+}
+
+?>
+
+<!-- cambio correcto -->
+<?php
+if (isset($_GET['good'])) {
+if ($_GET['good']=='true') {
+    ?>
+    <script>
+Swal.fire({
+    background:'#486b7c',
+    color:'white',
+    icon: 'success',
+    title: 'TODO CORRECTO',
+    text: 'CAMBIO EJECUTADO'
+
+
+})
+
+    </script>
+    <?php
+}
+}
+
+?>
+
+
+<!-- cambio correcto -->
+<?php
+if (isset($_GET['mal'])) {
+if ($_GET['mal']=='true') {
+    ?>
+    <script>
+Swal.fire({
+    background:'#486b7c',
+    color:'white',
+    icon: 'error',
+    title: 'UPS',
+    text: 'Este correo no se corresponde'
+
+
+})
+
+    </script>
+    <?php
+}
+}
+
+?>
 
 
 

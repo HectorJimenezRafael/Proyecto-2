@@ -73,7 +73,13 @@ Sign in  <i class="fa-solid fa-martini-glass"></i>
 
 </fieldset>
 
+
+
 </form>
+<a href="reserva_cliente.php">
+<button  class="boton-ini"> Reserva cliente</button>
+</a>
+
 </div>
 </body>
 

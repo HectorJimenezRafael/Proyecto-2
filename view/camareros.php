@@ -105,10 +105,7 @@ session_start();
                                 <label for="">Correo</label>
                                 <input type="text" name="correo" id="correo" placeholder="correo" class="form-control">
                             </div>
-                            <div class="form-group">
-                                <label for="">Contraseña</label>
-                                <input type="text" name="passwd" id="passwd" placeholder="contraseña" class="form-control">
-                            </div>
+                            
                           
                             <div class="form-group">
                                 <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block">
@@ -120,12 +117,18 @@ session_start();
             <div class="col-lg-8">
                 <div class="row">
                     <div class="col-lg-6 ml-auto">
+                    <button onclick="mostrar()"> Buscar <i class="fa-solid fa-magnifying-glass"></i></button>
                         <form action="" method="post" id="busqueda">
                             <div class="form-group">
-                                <label style="font-size: 20px; text-align:center" for="buscar_nombre">Buscar <i class="fa-solid fa-magnifying-glass"></i></label>
-                                <input type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Buscar Nombre" class="form-control">
+                                
+                              
+                                <input style="display: block;" type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Buscar Nombre" class="form-control">
                                 <br>
-                                <input type="text" name="buscar_apellido" id="buscar_apellido" placeholder="Buscar Apellido" class="form-control">
+                                <input style="display: block;"  type="text" name="buscar_apellido" id="buscar_apellido" placeholder="Buscar Apellido" class="form-control">
+                                <br>
+                                <input style="display: block;"  type="text" name="buscar_telefono" id="buscar_telefono" placeholder="Buscar teléfono" class="form-control">
+                                <br>
+                                <input style="display: block;"  type="text" name="buscar_correo" id="buscar_correo" placeholder="Buscar correo" class="form-control">
                             </div>
                         </form>
                     </div>
