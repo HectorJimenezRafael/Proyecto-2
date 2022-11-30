@@ -118,27 +118,29 @@ session_start();
             </div>
             <div class="col-lg-8">
                 <div class="container_table">
-                <div class="row">
-                    <div class="col-lg-6 ml-auto" style="text-align: center;">
+                <div class="row" style="width:100%;">
+                    <div class="col-lg-6 ml-auto" style="width:100%;text-align:center;">
                     <button class="boton_in" onclick="mostrar()"> Buscar <i class="fa-solid fa-magnifying-glass"></i></button>
                         <form action="" method="post" id="busqueda">
                             <div class="form-group2">
                                 
-                              
-                                <input style="display: block;" type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Buscar Nombre" class="form-control">
+                              <div style="display: flex;gap:15px;margin-top:10px;width:100%;">
+                                <input style="display: block;" type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Nombre..." class="form-control">
                                
-                                <input style="display: block;"  type="text" name="buscar_apellido" id="buscar_apellido" placeholder="Buscar Apellido" class="form-control">
+                                <input style="display: block;"  type="text" name="buscar_apellido" id="buscar_apellido" placeholder="Apellido..." class="form-control">
                                 
-                                <input style="display: block;"  type="text" name="buscar_telefono" id="buscar_telefono" placeholder="Buscar teléfono" class="form-control">
+                                <input style="display: block;"  type="text" name="buscar_telefono" id="buscar_telefono" placeholder="Teléfono..." class="form-control">
                                 
-                                <input style="display: block;"  type="text" name="buscar_correo" id="buscar_correo" placeholder="Buscar correo" class="form-control">
+                                <input style="display: block;"  type="text" name="buscar_correo" id="buscar_correo" placeholder="Correo..." class="form-control">
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
                 <br>
                 <br>
-                <table class="table table-hover table-light  scroll"  >
+                <div class="scroll">
+                <table class="table table-hover table-light  "  >
                     <thead >
                         <tr>
                             <th>ID</th>
@@ -154,6 +156,7 @@ session_start();
                     <tbody id="resultado">
 
                     </tbody>
+                    </div>
                 </table>
                 </div>
             </div>

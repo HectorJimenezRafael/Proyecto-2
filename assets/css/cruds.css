@@ -4,18 +4,17 @@
 }
 
 .col-lg-4 {
-    margin-top: 150px;
+    margin-top: 125px;
+    margin-bottom: 20px;
 }
 
 .container_table {
     padding: 1vw;
 }
 
-.form-group2 {}
-
 .scroll {
-    height: 200px;
-    overflow: scroll !important;
+    overflow: auto;
+    height: 420px;
 }
 
 .boton_in {
@@ -24,10 +23,6 @@
     color: #eee;
     font-weight: bold;
     text-transform: uppercase;
-}
-
-table {
-    border-radius: 30px;
 }
 
 .boton_in:hover {
@@ -39,11 +34,17 @@ table {
     background-color: aquamarine;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1320px) {
     table {
         display: block;
-        height: 200px;
+        height: 300px;
         overflow-x: auto;
         overflow-y: auto;
+    }
+}
+
+@media screen and (max-width:1400px) {
+    .col-lg-4 {
+        margin-top: 50px;
     }
 }
