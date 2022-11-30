@@ -113,6 +113,10 @@ session_start();
                                 <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block boton_in">
                             </div>
                         </form>
+                        <br>
+                        <div class="form-group" style="text-align: center;">
+                                <input type="button" onclick="reiniciar()" value="Reiniciar" id="reiniciar" class="btn btn-primary btn-block boton_in">
+                            </div>
                     </div>
                 </div>
             </div>
@@ -140,7 +144,7 @@ session_start();
                 <br>
                 <br>
                 <div class="scroll">
-                <table class="table table-hover table-light  "  >
+                <table class="table table-hover table-light "  >
                     <thead >
                         <tr>
                             <th>ID</th>
@@ -153,6 +157,7 @@ session_start();
                             
                         </tr>
                     </thead>
+                    
                     <tbody id="resultado">
 
                     </tbody>

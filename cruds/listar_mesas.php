@@ -5,10 +5,24 @@ require_once '../include/connection.php';
 
 if((!empty($_POST['buscar_nombre']))){
     $flitro_nombre=$_POST['buscar_nombre'];
-    $flitro_apellido=$_POST['buscar_apellido'];
-    $consulta = $pdo->prepare("SELECT * FROM tbl_recurso");
+    $flitro_capacidad=$_POST['buscar_capacidad'];
+    $flitro_lugar=$_POST['buscar_lugar'];
+    $consulta = $pdo->prepare("SELECT * FROM tbl_recurso WHERE nombre_mesa LIKE '%".$flitro_nombre."%' AND capacidad LIKE '%".$flitro_capacidad."%' AND id_lugar LIKE '%".$flitro_lugar."%'");
     $consulta->execute();
-}else{
+} else if ((!empty($_POST['buscar_capacidad']))) {
+    $flitro_nombre=$_POST['buscar_nombre'];
+    $flitro_capacidad=$_POST['buscar_capacidad'];
+    $flitro_lugar=$_POST['buscar_lugar'];
+    $consulta = $pdo->prepare("SELECT * FROM tbl_recurso WHERE nombre_mesa LIKE '%".$flitro_nombre."%' AND capacidad LIKE '%".$flitro_capacidad."%' AND id_lugar LIKE '%".$flitro_lugar."%' ");
+    $consulta->execute();
+}  else if ((!empty($_POST['buscar_lugar']))) {
+    $flitro_nombre=$_POST['buscar_nombre'];
+    $flitro_capacidad=$_POST['buscar_capacidad'];
+    $flitro_lugar=$_POST['buscar_lugar'];
+    $consulta = $pdo->prepare("SELECT * FROM tbl_recurso WHERE nombre_mesa LIKE '%".$flitro_nombre."%' AND capacidad LIKE '%".$flitro_capacidad."%' AND id_lugar LIKE '%".$flitro_lugar."%' ");
+    $consulta->execute();
+}
+else{
     //echo 'hola';
     $consulta = $pdo->prepare("SELECT * FROM tbl_recurso");
     $consulta->execute();

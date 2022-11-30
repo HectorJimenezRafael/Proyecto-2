@@ -1,13 +1,14 @@
-ListarProductos('');
+ListarProductos('', '', '');
 
-function ListarProductos(buscar_nombre, buscar_apellido) {
+function ListarProductos(buscar_nombre, buscar_capacidad, buscar_lugar) {
 
     var resultado = document.getElementById('resultado');
     //var frmbusqueda=document.getElementById('frmbusqueda');
     var formdata = new FormData();
 
     formdata.append('buscar_nombre', buscar_nombre);
-    formdata.append('buscar_apellido', buscar_apellido);
+    formdata.append('buscar_capacidad', buscar_capacidad);
+    formdata.append('buscar_lugar', buscar_lugar);
 
     var ajax = new XMLHttpRequest();
     ajax.open('POST', '../cruds/listar_mesas.php');
@@ -23,6 +24,8 @@ function ListarProductos(buscar_nombre, buscar_apellido) {
                 str += "<td>" + item.capacidad + "</td>";
                 str += "<td>";
                 str = str + " <button type='button' style='background-color:#006d6d;' class='btn btn-success' onclick=" + "Editar(" + item.id + ")>Editar</button>";
+                str += "</td> ";
+                str += "<td>";
                 str = str + " <button type='button' style='background-color:#2f414F;'  class='btn btn-danger' onclick=" + "Eliminar(" + item.id + ")>Eliminar</button>";
                 str += "</td> ";
                 str += "</tr>";
@@ -44,23 +47,38 @@ function ListarProductos(buscar_nombre, buscar_apellido) {
 // FILTRO
 buscar_nombre.addEventListener("keyup", () => {
     const valor_nombre = buscar_nombre.value;
-    const valor_apellido = buscar_apellido.value;
-    if (buscar_nombre == "") {
-        ListarProductos('');
+    const valor_capacidad = buscar_capacidad.value;
+    const valor_lugar = buscar_lugar.value;
+    if (buscar_nombre == "" || buscar_capacidad == "" || buscar_lugar == "") {
+        ListarProductos('', '', '');
     } else {
-        ListarProductos(valor_nombre, valor_apellido);
+        ListarProductos(valor_nombre, valor_capacidad, valor_lugar);
     }
 });
 
-buscar_apellido.addEventListener("keyup", () => {
+buscar_capacidad.addEventListener("change", () => {
     const valor_nombre = buscar_nombre.value;
-    const valor_apellido = buscar_apellido.value;
-    if (buscar_apellido == "") {
-        ListarProductos('');
+    const valor_capacidad = buscar_capacidad.value;
+    const valor_lugar = buscar_lugar.value;
+    if (buscar_nombre == "" || buscar_capacidad == "" || buscar_lugar == "") {
+        ListarProductos('', '', '');
     } else {
-        ListarProductos(valor_nombre, valor_apellido);
+        ListarProductos(valor_nombre, valor_capacidad, valor_lugar);
     }
 });
+
+buscar_lugar.addEventListener("change", () => {
+    const valor_nombre = buscar_nombre.value;
+    const valor_capacidad = buscar_capacidad.value;
+    const valor_lugar = buscar_lugar.value;
+    if (buscar_nombre == "" || buscar_capacidad == "" || buscar_lugar == "") {
+        ListarProductos('', '', '');
+    } else {
+        ListarProductos(valor_nombre, valor_capacidad, valor_lugar);
+    }
+});
+
+
 
 
 
@@ -131,7 +149,7 @@ registrar.addEventListener("click", () => {
                     timer: 1500
                 });
                 form.reset();
-                ListarProductos('');
+                ListarProductos('', '', '');
             } else {
                 Swal.fire({
                     icon: 'success',
@@ -141,7 +159,7 @@ registrar.addEventListener("click", () => {
                 });
                 registrar.value = "Registrar";
                 idp.value = "";
-                ListarProductos('');
+                ListarProductos('', '', '');
                 form.reset();
             }
         } else {
@@ -166,7 +184,7 @@ function Editar(id) {
     ajax.onload = function() {
         if (ajax.status == 200) {
             var json = JSON.parse(ajax.responseText);
-            alert(json);
+            // alert(json);
             document.getElementById('idp').value = json.id;
             document.getElementById('nombre').value = json.nombre_mesa;
             document.getElementById('lugar').value = json.id_lugar;

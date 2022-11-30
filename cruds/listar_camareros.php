@@ -68,7 +68,15 @@ if(!empty($_POST['buscar_nombre'])  ){
 
 
 $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-echo json_encode($resultado);
+// echo json_encode($resultado);
+
+
+if (count($resultado)==0) {
+   echo"sin_resultados";
+}else {
+    echo json_encode($resultado);
+}
+
 /*foreach ($resultado as $data) {
     echo "<tr>
             <td>" . $data['id'] . "</td>

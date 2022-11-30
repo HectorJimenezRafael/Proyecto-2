@@ -1,6 +1,11 @@
 ListarProductos('', '', '', '');
 
 
+function reiniciar() {
+    var form = document.getElementById('frm');
+    form.reset();
+    document.getElementById('registrar').value = "registrar";
+}
 
 
 

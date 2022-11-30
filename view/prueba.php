@@ -1,3 +1,8 @@
+
+
+<!-- 
+---------------------------------- -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +18,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- HOJA DE ESTILOS CSS -->
    <link rel="stylesheet" href="../assets/css/main.css">
-   <link rel="stylesheet" href="../assets/css/cruds.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <!-- Icono en pestaña -->
     <link rel="shortcut icon" href="../assets/img/logo.png" />
@@ -41,16 +45,12 @@ session_start();
     if($_SESSION['usuario_tipo']!=1){
       echo "<script>window.location.href = '../view/login.php';</script>";
     }
-
-    if ($_SESSION['admin']!=1) {
-      echo "<script>window.location.href = '../view/inicio.php?en=no';</script>";
-    }
     ?>
 
 
 <nav>
   <ul class="menu">
-    <li class="logo"><img src="../assets//img/logo.png" width="40px"></li>
+    <li class="logo"><img src="../img/logo.png" width="40px"></li>
     <li class="item button"><a href="./inicio.php"><i class="fa-solid fa-arrow-left"></i></a></li>
     <li class="item"><a href="../include/cerrar_sesion.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
     
@@ -83,9 +83,9 @@ session_start();
 <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <div class="card" style="border-radius: 30px;">
-                    <div class="card-header  titulo2" style="background-color: #8eb9d6;border-radius: 30px;">
-                        <h3  class="text-center">Mantenimiento <i class="fa-solid fa-person-digging"></i></h3>
+                <div class="card">
+                    <div class="card-header bg-primary">
+                        <h3 class="text-center">Mesas</h3>
                     </div>
                     <div class="card-body">
                         <form action="" method="post" id="frm">
@@ -95,79 +95,64 @@ session_start();
                                 <input type="text" name="nombre" id="nombre" placeholder="nombre" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="">Apellido</label>
-                                <input type="text" name="apellido" id="apellido" placeholder="apellido" class="form-control">
+                                <label for="lugar">Lugar</label>
+                               <br>
+                                <select name="lugar" id="lugar">
+                                    <option value="1">Interior</option>
+                                    <option value="2">Terraza</option>
+                                    <option value="3">Vip</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="">Teléfono</label>
-                                <input type="text" name="telefono" id="telefono" placeholder="teléfono" class="form-control">
+                            <label for="capacidad">capacidad</label>
+                            <br>
+                                <select name="capacidad" id="capacidad">
+                                    <option value="2">2</option>
+                                    <option value="4">4</option>
+                                    <option value="6">6</option>
+                                    <option value="6">8</option>
+                                </select>
                             </div>
+                           
+                          
                             <div class="form-group">
-                                <label for="">Correo</label>
-                                <input type="text" name="correo" id="correo" placeholder="correo" class="form-control">
-                            </div>
-                            
-                         
-                          <br>
-                            <div class="form-group" style="text-align: center;">
-                                <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block boton_in">
+                                <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block">
                             </div>
                         </form>
-                        <br>
-                        <div class="form-group" style="text-align: center;">
-                                <input type="button" onclick="reiniciar()" value="Reiniciar" id="reiniciar" class="btn btn-primary btn-block boton_in">
-                            </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-8">
-                <div class="container_table">
-                <div class="row" style="width:100%;">
-                    <div class="col-lg-6 ml-auto" style="width:100%;text-align:center;">
-                    <button class="boton_in" onclick="mostrar()"> Buscar <i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="row">
+                    <div class="col-lg-6 ml-auto">
                         <form action="" method="post" id="busqueda">
-                            <div class="form-group2">
-                                
-                              <div style="display: flex;gap:15px;margin-top:10px;width:100%;">
-                                <input style="display: block;" type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Nombre..." class="form-control">
-                               
-                                <input style="display: block;"  type="text" name="buscar_apellido" id="buscar_apellido" placeholder="Apellido..." class="form-control">
-                                
-                                <input style="display: block;"  type="text" name="buscar_telefono" id="buscar_telefono" placeholder="Teléfono..." class="form-control">
-                                
-                                <input style="display: block;"  type="text" name="buscar_correo" id="buscar_correo" placeholder="Correo..." class="form-control">
-                                </div>
+                            <div class="form-group">
+                                <label style="font-size: 20px; text-align:center" for="buscar_nombre">Buscar <i class="fa-solid fa-magnifying-glass"></i></label>
+                                <input type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Buscar Nombre" class="form-control">
+                                <br>
+                                <input type="text" name="buscar_apellido" id="buscar_apellido" placeholder="Buscar Apellido" class="form-control">
                             </div>
                         </form>
                     </div>
                 </div>
-                <br>
-                <br>
-                
-                <div class="scroll">
-                <table class="table table-hover table-light  "  >
-                    <thead >
+                <table class="table table-hover table-resposive">
+                    <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Teléfono</th>
-                            <th>Correo</th>
-                            <th>Modificar</th>
-                            <th>Eliminar</th>
+                            <th>Lugar</th>
+                            <th>Capacidad</th>
                             
                         </tr>
                     </thead>
                     <tbody id="resultado">
 
                     </tbody>
-                    </div>
                 </table>
-                </div>
             </div>
         </div>
     </div>
-    <script src="../assets/js/mantenimiento.js"></script>
+    <script src="../assets/js/mesas.js"></script>
 
 </body>
 </html>
