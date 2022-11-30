@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- HOJA DE ESTILOS CSS -->
    <link rel="stylesheet" href="../assets/css/main.css">
+   <link rel="stylesheet" href="../assets/css/cruds.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <!-- Icono en pestaña -->
     <link rel="shortcut icon" href="../assets/img/logo.png" />
@@ -82,9 +83,9 @@ session_start();
 <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header bg-primary">
-                        <h3  class="text-center">Camareros</h3>
+                <div class="card" style="border-radius: 30px;">
+                    <div class="card-header  titulo2" style="background-color: #8eb9d6;border-radius: 30px;">
+                        <h3  class="text-center">Camareros <i class="fa-solid fa-kitchen-set"></i></h3>
                     </div>
                     <div class="card-body">
                         <form action="" method="post" id="frm">
@@ -106,42 +107,47 @@ session_start();
                                 <input type="text" name="correo" id="correo" placeholder="correo" class="form-control">
                             </div>
                             
-                          
-                            <div class="form-group">
-                                <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block">
+                         
+                          <br>
+                            <div class="form-group" style="text-align: center;">
+                                <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block boton_in">
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
             <div class="col-lg-8">
+                <div class="container_table">
                 <div class="row">
-                    <div class="col-lg-6 ml-auto">
-                    <button onclick="mostrar()"> Buscar <i class="fa-solid fa-magnifying-glass"></i></button>
+                    <div class="col-lg-6 ml-auto" style="text-align: center;">
+                    <button class="boton_in" onclick="mostrar()"> Buscar <i class="fa-solid fa-magnifying-glass"></i></button>
                         <form action="" method="post" id="busqueda">
-                            <div class="form-group">
+                            <div class="form-group2">
                                 
                               
                                 <input style="display: block;" type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Buscar Nombre" class="form-control">
-                                <br>
+                               
                                 <input style="display: block;"  type="text" name="buscar_apellido" id="buscar_apellido" placeholder="Buscar Apellido" class="form-control">
-                                <br>
+                                
                                 <input style="display: block;"  type="text" name="buscar_telefono" id="buscar_telefono" placeholder="Buscar teléfono" class="form-control">
-                                <br>
+                                
                                 <input style="display: block;"  type="text" name="buscar_correo" id="buscar_correo" placeholder="Buscar correo" class="form-control">
                             </div>
                         </form>
                     </div>
                 </div>
-                <table class="table table-hover table-resposive">
-                    <thead class="thead-dark">
+                <br>
+                <br>
+                <table class="table table-hover table-light  scroll"  >
+                    <thead >
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Teléfono</th>
                             <th>Correo</th>
-                            <th>Opciones</th>
+                            <th>Modificar</th>
+                            <th>Eliminar</th>
                             
                         </tr>
                     </thead>
@@ -149,6 +155,7 @@ session_start();
 
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

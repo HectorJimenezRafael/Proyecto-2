@@ -61,6 +61,8 @@ function ListarProductos(buscar_nombre, buscar_apellido, buscar_correo, buscar_t
                 str += "<td>" + item.correo + "</td>";
                 str += "<td>";
                 str = str + " <button type='button' style='background-color:#006d6d;' class='btn btn-success' onclick=" + "Editar(" + item.id + ")>Editar</button>";
+                str += "</td> ";
+                str += "<td>";
                 str = str + " <button type='button' style='background-color:#2f414F;'  class='btn btn-danger' onclick=" + "Eliminar(" + item.id + ")>Eliminar</button>";
                 str += "</td> ";
                 str += "</tr>";
@@ -271,7 +273,7 @@ function Editar(id) {
     ajax.onload = function() {
         if (ajax.status == 200) {
             var json = JSON.parse(ajax.responseText);
-            alert(json);
+            // alert(json);
             document.getElementById('idp').value = json.id;
             document.getElementById('nombre').value = json.usuario_nombre;
             document.getElementById('apellido').value = json.Apellido;

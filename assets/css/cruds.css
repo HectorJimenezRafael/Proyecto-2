@@ -1,0 +1,49 @@
+.container {
+    background-color: #3894a3;
+    border-radius: 30px;
+}
+
+.col-lg-4 {
+    margin-top: 150px;
+}
+
+.container_table {
+    padding: 1vw;
+}
+
+.form-group2 {}
+
+.scroll {
+    height: 200px;
+    overflow: scroll !important;
+}
+
+.boton_in {
+    border-radius: 30px;
+    background-color: #2f414F;
+    color: #eee;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table {
+    border-radius: 30px;
+}
+
+.boton_in:hover {
+    background-color: #ffb668;
+    cursor: pointer;
+}
+
+.titulo2 {
+    background-color: aquamarine;
+}
+
+@media screen and (max-width: 720px) {
+    table {
+        display: block;
+        height: 200px;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+}
