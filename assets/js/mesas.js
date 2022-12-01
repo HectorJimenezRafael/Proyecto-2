@@ -1,5 +1,52 @@
 ListarProductos('', '', '');
 
+
+
+function reiniciar() {
+    var form = document.getElementById('frm');
+    form.reset();
+    document.getElementById('registrar').value = "registrar";
+}
+
+
+function mostrar() {
+    if (document.getElementById('buscar_nombre').style.display == 'none') {
+        document.getElementById('buscar_nombre').style.display = 'block';
+    } else {
+        document.getElementById('buscar_nombre').style.display = 'none';
+    }
+
+
+    if (document.getElementById('buscar_capacidad').style.display == 'none') {
+        document.getElementById('buscar_capacidad').style.display = 'block';
+    } else {
+        document.getElementById('buscar_capacidad').style.display = 'none';
+    }
+
+
+    if (document.getElementById('buscar_lugar').style.display == 'none') {
+        document.getElementById('buscar_lugar').style.display = 'block';
+    } else {
+        document.getElementById('buscar_lugar').style.display = 'none';
+    }
+
+
+    if (document.getElementById('titulo_capacidad').style.display == 'none') {
+        document.getElementById('titulo_capacidad').style.display = 'block';
+    } else {
+        document.getElementById('titulo_capacidad').style.display = 'none';
+    }
+
+    if (document.getElementById('titulo_lugar').style.display == 'none') {
+        document.getElementById('titulo_lugar').style.display = 'block';
+    } else {
+        document.getElementById('titulo_lugar').style.display = 'none';
+    }
+
+
+
+}
+
 function ListarProductos(buscar_nombre, buscar_capacidad, buscar_lugar) {
 
     var resultado = document.getElementById('resultado');
@@ -20,7 +67,7 @@ function ListarProductos(buscar_nombre, buscar_capacidad, buscar_lugar) {
             json.forEach(function(item) {
                 str = "<tr><td>" + item.id + "</td>";
                 str = str + "<td>" + item.nombre_mesa + "</td>";
-                str += "<td>" + item.id_lugar + "</td>";
+                str += "<td>" + item.lugar_recurso + "</td>";
                 str += "<td>" + item.capacidad + "</td>";
                 str += "<td>";
                 str = str + " <button type='button' style='background-color:#006d6d;' class='btn btn-success' onclick=" + "Editar(" + item.id + ")>Editar</button>";
@@ -106,7 +153,7 @@ function Eliminar(id) {
                 if (ajax.status === 200) {
 
                     if (ajax.responseText == "ok") {
-                        ListarProductos('');
+                        ListarProductos('', '', '');
                         Swal.fire({
                             icon: 'success',
                             title: 'Eliminado',

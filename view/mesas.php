@@ -88,11 +88,11 @@ session_start();
                         <h3  class="text-center">Mesas <i class="fa-solid fa-chair"></i></h3>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post" id="frm">
+                        <form action="" method="post" id="frm" >
                         <div class="form-group">
                                 <label for="">Nombre</label>
                                 <input type="hidden" name="idp" id="idp" value="">
-                                <input type="text" name="nombre" id="nombre" placeholder="nombre" class="form-control">
+                                <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="lugar">Lugar</label>
@@ -104,7 +104,7 @@ session_start();
                                 </select>
                             </div>
                             <div class="form-group">
-                            <label for="capacidad">capacidad</label>
+                            <label for="capacidad">Capacidad</label>
                             <br>
                                 <select name="capacidad" id="capacidad">
                                     <option value="2">2</option>
@@ -113,7 +113,8 @@ session_start();
                                     <option value="6">8</option>
                                 </select>
                             </div>
-                           
+                            
+                            <!-- <input type="file" name="imagen" id="imagen" placeholder="nombre" class="form-control"> -->
                             
                          
                           <br>
@@ -121,6 +122,10 @@ session_start();
                                 <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block boton_in">
                             </div>
                         </form>
+                        <br>
+                        <div class="form-group" style="text-align: center;">
+                                <input type="button" onclick="reiniciar()" value="Reiniciar" id="reiniciar" class="btn btn-primary btn-block boton_in">
+                            </div>
                     </div>
                 </div>
             </div>
@@ -133,25 +138,27 @@ session_start();
                             <div class="form-group2">
                                 
                               <div style="display: flex;gap:15px;margin-top:10px;width:100%;">
-                                <input style="display: block;" type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Nombre..." class="form-control">
-                               
-                                <select name="buscar_capacidad" id="buscar_capacidad">
+                                <input style="display: none;" type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Nombre..." class="form-control">
+                                <p id="titulo_lugar" style="margin-top: 10px;font-size: 20px;color:white;display: none;">Lugar </p>
+                                <select style="display: none;" name="buscar_lugar" id="buscar_lugar">
+                                <option value="">Indiferente</option>
+                                    <option value="1">Interior</option>
+                                    <option value="2">Terraza</option>
+                                    <option value="3">Vip</option>
+                                </select>
+                                <p id="titulo_capacidad" style="margin-top: 10px;font-size: 20px;color:white;display: none;">Capacidad </p>
+                                <select style="display: none;" name="buscar_capacidad" id="buscar_capacidad">
                                     <option value="">Indiferente</option>
                                     <option value="2">2</option>
                                     <option value="4">4</option>
                                     <option value="6">6</option>
                                     <option value="6">8</option>
                                 </select>
-
-                                <select name="buscar_lugar" id="buscar_lugar">
-                                <option value="">Indiferente</option>
-                                    <option value="1">Interior</option>
-                                    <option value="2">Terraza</option>
-                                    <option value="3">Vip</option>
-                                </select>
+                              
                                 </div>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
                 <br>

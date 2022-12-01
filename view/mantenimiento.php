@@ -129,13 +129,13 @@ session_start();
                             <div class="form-group2">
                                 
                               <div style="display: flex;gap:15px;margin-top:10px;width:100%;">
-                                <input style="display: block;" type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Nombre..." class="form-control">
+                                <input style="display: none;" type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Nombre..." class="form-control">
                                
-                                <input style="display: block;"  type="text" name="buscar_apellido" id="buscar_apellido" placeholder="Apellido..." class="form-control">
+                                <input style="display: none;"  type="text" name="buscar_apellido" id="buscar_apellido" placeholder="Apellido..." class="form-control">
                                 
-                                <input style="display: block;"  type="text" name="buscar_telefono" id="buscar_telefono" placeholder="Teléfono..." class="form-control">
+                                <input style="display: none;"  type="text" name="buscar_telefono" id="buscar_telefono" placeholder="Teléfono..." class="form-control">
                                 
-                                <input style="display: block;"  type="text" name="buscar_correo" id="buscar_correo" placeholder="Correo..." class="form-control">
+                                <input style="display: none;"  type="text" name="buscar_correo" id="buscar_correo" placeholder="Correo..." class="form-control">
                                 </div>
                             </div>
                         </form>

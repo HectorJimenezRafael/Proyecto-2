@@ -92,19 +92,19 @@ session_start();
                             <div class="form-group">
                                 <label for="">Nombre</label>
                                 <input type="hidden" name="idp" id="idp" value="">
-                                <input type="text" name="nombre" id="nombre" placeholder="nombre" class="form-control">
+                                <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="">Apellido</label>
-                                <input type="text" name="apellido" id="apellido" placeholder="apellido" class="form-control">
+                                <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="">Teléfono</label>
-                                <input type="text" name="telefono" id="telefono" placeholder="teléfono" class="form-control">
+                                <input type="text" name="telefono" id="telefono" placeholder="Teléfono" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="">Correo</label>
-                                <input type="text" name="correo" id="correo" placeholder="correo" class="form-control">
+                                <input type="text" name="correo" id="correo" placeholder="Correo" class="form-control">
                             </div>
                             
                          
@@ -129,13 +129,13 @@ session_start();
                             <div class="form-group2">
                                 
                               <div style="display: flex;gap:15px;margin-top:10px;width:100%;">
-                                <input style="display: block;" type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Nombre..." class="form-control">
+                                <input style="display: none;" type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Nombre..." class="form-control">
                                
-                                <input style="display: block;"  type="text" name="buscar_apellido" id="buscar_apellido" placeholder="Apellido..." class="form-control">
+                                <input style="display: none;"  type="text" name="buscar_apellido" id="buscar_apellido" placeholder="Apellido..." class="form-control">
                                 
-                                <input style="display: block;"  type="text" name="buscar_telefono" id="buscar_telefono" placeholder="Teléfono..." class="form-control">
+                                <input style="display: none;"  type="text" name="buscar_telefono" id="buscar_telefono" placeholder="Teléfono..." class="form-control">
                                 
-                                <input style="display: block;"  type="text" name="buscar_correo" id="buscar_correo" placeholder="Correo..." class="form-control">
+                                <input style="display: none;"  type="text" name="buscar_correo" id="buscar_correo" placeholder="Correo..." class="form-control">
                                 </div>
                             </div>
                         </form>

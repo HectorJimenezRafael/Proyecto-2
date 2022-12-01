@@ -43,7 +43,7 @@ $resultado=$query->fetchAll(PDO::FETCH_ASSOC);
 if (count($resultado)==1) {
     foreach ($resultado as $mesa) {
         // echo $id_mesa=$mesa['id'];
-        echo $id_mesa=$mesa['id'];
+      $id_mesa=$mesa['id'];
     }
 
     $sql="INSERT INTO `tbl_reserva_online`( `nombre_res_o`, `apellido_res_o`, `correo_res_o`, `telefono_res_o`, `id_mesa`, 

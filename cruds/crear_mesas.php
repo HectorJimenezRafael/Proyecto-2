@@ -5,7 +5,7 @@ if (isset($_POST)) {
     $nombre = $_POST['nombre'];
     $capacidad = $_POST['capacidad'];
     $lugar = $_POST['lugar'];
-    
+    // $imagen=addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
    
     
     if (empty($_POST['idp'])){
@@ -13,6 +13,7 @@ if (isset($_POST)) {
         $query->bindParam(":nombre", $nombre);
         $query->bindParam(":lugar", $lugar);
         $query->bindParam(":capacidad", $capacidad);
+       
         $query->execute();
         // $pdo = null;
         echo "ok";
@@ -24,7 +25,7 @@ if (isset($_POST)) {
         $query->bindParam(":capacidad", $capacidad);
         $query->bindParam("id", $id);
         $query->execute();
-        $pdo = null;
+        // $pdo = null;
         echo "modificado";
     }
     
