@@ -54,7 +54,10 @@ const getMesas = async() => {
 }
 
 
+setInterval(function() {
+    getMesas()
 
+}, 3000);
 
 
 const filtrar = async() => {

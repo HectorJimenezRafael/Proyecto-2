@@ -82,7 +82,7 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
             </p>
             <p>
             <label>Fecha <i class="fa-solid fa-calendar-days"></i></label>
-                <input type="date" min="<?php echo date("Y-m-d");?>" name="fecha">
+                <input type="date" min="<?php echo date("Y-m-d");?>" name="fecha" id="fecha">
                 
             </p>
             <p>
@@ -100,7 +100,7 @@ foreach ($resultado as $uwu ) {
             </p>
             <?php
 
-$sql="SELECT * FROM tbl_horas;";
+$sql="SELECT * FROM tbl_horas WHERE hora>CURRENT_TIME;";
 
 $query = $pdo->prepare($sql);
 
@@ -113,15 +113,8 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
 
             <p>
             <label>Hora <i class="fa-solid fa-clock"></i></label>
-            <select name="hora" id="hora" class="select-css">
-            <?php
-foreach ($resultado as $uwu ) {
-  ?>
-  <option value="<?php echo $uwu['id']; ?>"><?php echo $uwu['hora']; ?></option>
- 
-  <?php
-}
-?>
+            <select style="display: none;" name="hora" id="hora" class="select-css">
+
 </select>
                 
             </p>
@@ -158,7 +151,7 @@ foreach ($resultado as $uwu ) {
 
 </div>
 
-
+<script src="../assets/js/horario.js"></script>
 
 
 </body>

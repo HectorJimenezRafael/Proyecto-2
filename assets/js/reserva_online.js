@@ -9,8 +9,10 @@ window.onload = function() {
         ajax.open('POST', '../online/reserva_online.php');
         ajax.onload = function() {
             if (ajax.status === 200) {
+                // alert(ajax.responseText)
                 if (ajax.responseText == "consulta") {
-                    console.log("consulta_realizada");
+                    // console.log("consulta_realizada");
+
                 }
 
             }
@@ -23,5 +25,5 @@ window.onload = function() {
     setInterval(function() {
         reserva_online()
 
-    }, 10000);
+    }, 1000);
 }
