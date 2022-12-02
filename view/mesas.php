@@ -42,9 +42,9 @@ session_start();
       echo "<script>window.location.href = '../view/login.php';</script>";
     }
 
-    if ($_SESSION['admin']!=1) {
-      echo "<script>window.location.href = '../view/inicio.php?en=no';</script>";
-    }
+    // if ($_SESSION['admin']!=1) {
+    //   echo "<script>window.location.href = '../view/inicio.php?en=no';</script>";
+    // }
     ?>
 
 
@@ -88,7 +88,7 @@ session_start();
                         <h3  class="text-center">Mesas <i class="fa-solid fa-chair"></i></h3>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post" id="frm" >
+                        <form action="" method="post" id="frm" enctype="multipart/form-data">
                         <div class="form-group">
                                 <label for="">Nombre</label>
                                 <input type="hidden" name="idp" id="idp" value="">
@@ -113,7 +113,7 @@ session_start();
                                     <option value="6">8</option>
                                 </select>
                             </div>
-                            
+                            <input type="file" name="imagen">
                             <!-- <input type="file" name="imagen" id="imagen" placeholder="nombre" class="form-control"> -->
                             
                          

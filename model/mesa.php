@@ -17,7 +17,7 @@ class Mesas {
         $conexion=self::bd();
         require_once '../include/connection.php';
         $sql="SELECT rec.id as id, rec.nombre_mesa as nombre, rec.capacidad as capacidad, est.nombre_estado as estado, lug.lugar_recurso as lugar,rec.coordX as X, rec.coordY as Y,
-        rec.scale as scale
+        rec.scale as scale,rec.img_recurso
         FROM 
         tbl_recurso as rec inner join tbl_estado as est on rec.id_estado=est.id inner join tbl_lugar as lug ON lug.id = rec.id_lugar ORDER BY rec.id_estado,lugar, id asc;";
 

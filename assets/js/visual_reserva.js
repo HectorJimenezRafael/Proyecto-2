@@ -36,7 +36,7 @@ const getMesas = async() => {
         let box = `<div class='box'>
             <h4 class="flex titulo"> <b> Mesa: ${resul.data[i][1]} </b></h4>
             <p>Lugar: ${resul.data[i][4]}<p>
-            <p><img onclick="reserva(${resul.data[i][0]})" class='img_estado' src='../assets/img/recursos/${resul.data[i][4]}_${resul.data[i][2]}_${resul.data[i][3]}.png'></p>
+            <p><img onclick="reserva(${resul.data[i][0]})" class='img_estado' src='${resul.data[i][8]} '></p>
 
             </div>
             `;
@@ -57,7 +57,7 @@ const getMesas = async() => {
 setInterval(function() {
     getMesas()
 
-}, 3000);
+}, 1000);
 
 
 const filtrar = async() => {
