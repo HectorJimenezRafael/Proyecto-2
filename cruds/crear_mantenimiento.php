@@ -24,7 +24,7 @@ $query->execute();
 $resultado=$query->fetchAll(PDO::FETCH_ASSOC);
 
 if (count($resultado)==0) {
-    $query = $pdo->prepare("INSERT INTO tbl_usuarios (usuario_nombre, Apellido,usuario_tipo,telefono,correo,usuario_password) VALUES (:nombre, :apellido,1,:telefono,:correo,:pass)");
+    $query = $pdo->prepare("INSERT INTO tbl_usuarios (usuario_nombre, Apellido,usuario_tipo,telefono,correo,usuario_password) VALUES (:nombre, :apellido,2,:telefono,:correo,:pass)");
     $query->bindParam(":nombre", $nombre);
     $query->bindParam(":apellido", $apellido);
     $query->bindParam(":telefono", $telefono);

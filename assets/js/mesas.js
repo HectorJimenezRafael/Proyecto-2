@@ -12,6 +12,7 @@ function reiniciar() {
 function mostrar() {
     if (document.getElementById('buscar_nombre').style.display == 'none') {
         document.getElementById('buscar_nombre').style.display = 'block';
+        document.getElementById('boton_buscar').value = "Actualizar"
     } else {
         document.getElementById('buscar_nombre').style.display = 'none';
     }
@@ -200,6 +201,24 @@ registrar.addEventListener("click", () => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Registrado',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                form.reset();
+                ListarProductos('', '', '');
+            } else if (ajax.responseText == "campos_vacios") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Campos no rellenados',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                form.reset();
+                ListarProductos('', '', '');
+            } else if (ajax.responseText == "formato_archivo_mal") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Formato del archivo incorrecto',
                     showConfirmButton: false,
                     timer: 1500
                 });

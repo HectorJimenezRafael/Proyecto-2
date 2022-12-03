@@ -174,7 +174,7 @@ function Eliminar(id) {
             var formdata = new FormData();
             formdata.append('id', id);
             var ajax = new XMLHttpRequest();
-            ajax.open('POST', '../cruds/eliminar_camareros.php');
+            ajax.open('POST', '../cruds/eliminar_users.php');
             ajax.onload = function() {
                 if (ajax.status === 200) {
 
@@ -284,7 +284,7 @@ function Editar(id) {
     var formdata = new FormData();
     formdata.append('id', id);
     var ajax = new XMLHttpRequest();
-    ajax.open('POST', '../cruds/editar_camareros.php');
+    ajax.open('POST', '../cruds/editar_users.php');
     ajax.onload = function() {
         if (ajax.status == 200) {
             var json = JSON.parse(ajax.responseText);

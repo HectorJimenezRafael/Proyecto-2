@@ -113,7 +113,9 @@ session_start();
                                     <option value="6">8</option>
                                 </select>
                             </div>
+                            <br>
                             <input type="file" name="imagen">
+                            <br>
                             <!-- <input type="file" name="imagen" id="imagen" placeholder="nombre" class="form-control"> -->
                             
                          
@@ -133,7 +135,7 @@ session_start();
                 <div class="container_table">
                 <div class="row" style="width:100%;">
                     <div class="col-lg-6 ml-auto" style="width:100%;text-align:center;">
-                    <button class="boton_in" onclick="mostrar()"> Buscar <i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="boton_in" id="boton_buscar" onclick="mostrar()"> Buscar <i class="fa-solid fa-magnifying-glass"></i></button>
                         <form action="" method="post" id="busqueda">
                             <div class="form-group2">
                                 

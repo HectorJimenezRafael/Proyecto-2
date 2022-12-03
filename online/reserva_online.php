@@ -13,7 +13,7 @@ $query->bindParam(":hoy", $hoy);
 $query->execute();
 $hay_reserva=$query->fetchAll(PDO::FETCH_ASSOC);
 
-if (count($hay_reserva)==1) {
+if (count($hay_reserva)>1) {
     
 
         foreach ($hay_reserva as $mesa) {
@@ -21,7 +21,7 @@ if (count($hay_reserva)==1) {
              $id_mesa=$mesa['id_mesa'];
              $ocupacion=$mesa['ocupacion_res_o'];
              try {
-            //  $pdo->beginTransaction();
+             $pdo->beginTransaction();
     
              $sql="UPDATE tbl_recurso SET id_estado=2 WHERE id=:id";
              $query=$pdo->prepare($sql);
