@@ -84,7 +84,7 @@ session_start();
         <div class="row">
             <div class="col-lg-4">
                 <div class="card" style="border-radius: 30px;">
-                    <div class="card-header  titulo2" style="background-color: #8eb9d6;border-radius: 30px;">
+                    <div class="card-header  titulo2" style="background-color: #8eb9d6;border-radius: 30px 30px 0px 0px;">
                         <h3  class="text-center">Mantenimiento <i class="fa-solid fa-person-digging"></i></h3>
                     </div>
                     <div class="card-body">
@@ -145,8 +145,8 @@ session_start();
                 <br>
                 
                 <div class="scroll">
-                <table class="table table-hover table-light  "  >
-                    <thead >
+                <table class="table table-hover  "  >
+                    <thead class="bg-info">
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
@@ -158,7 +158,7 @@ session_start();
                             
                         </tr>
                     </thead>
-                    <tbody id="resultado">
+                    <tbody class="table-info" id="resultado">
 
                     </tbody>
                     </div>

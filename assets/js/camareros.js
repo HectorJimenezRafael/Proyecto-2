@@ -159,13 +159,15 @@ buscar_telefono.addEventListener("keyup", () => {
 
 function Eliminar(id) {
     Swal.fire({
-        title: 'Esta seguro de eliminar?',
+        title: '¿Quiere eliminar este camarero?',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si!',
-        cancelButtonText: 'NO'
+        confirmButtonColor: '#3894a3',
+        cancelButtonColor: '#2f414F',
+        confirmButtonText: 'Si',
+        background: '#006d6d',
+        color: 'white',
+        cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.isConfirmed) {
 
@@ -182,9 +184,13 @@ function Eliminar(id) {
                         ListarProductos('', '', '', '');
                         Swal.fire({
                             icon: 'success',
-                            title: 'Eliminado',
+                            title: 'Camarero despedido correctamente',
                             showConfirmButton: false,
-                            timer: 1500
+                            background: '#006d6d',
+                            color: 'white',
+                            timerProgressBar: true,
+
+                            timer: 3500
                         })
                     }
                 }
@@ -215,9 +221,12 @@ registrar.addEventListener("click", () => {
             if (ajax.responseText == "ok") {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Registrado',
+                    title: 'Camarero creado correctamente',
+                    background: '#006d6d',
+                    color: 'white',
                     showConfirmButton: false,
-                    timer: 1500
+                    timerProgressBar: true,
+                    timer: 3500
                 });
                 document.getElementById('registrar').value = "registrar";
                 form.reset();
@@ -225,9 +234,13 @@ registrar.addEventListener("click", () => {
             } else if (ajax.responseText == "vacio") {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Campos vacios',
+                    title: 'Campos no rellenados',
                     showConfirmButton: false,
-                    timer: 1500
+                    background: '#006d6d',
+                    color: 'white',
+                    timerProgressBar: true,
+                    toast: true,
+                    timer: 3500
                 });
                 document.getElementById('registrar').value = "registrar";
                 form.reset();
@@ -235,9 +248,13 @@ registrar.addEventListener("click", () => {
             } else if (ajax.responseText == "mal_formato") {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Mal formato',
+                    title: 'Formato incorrecto',
                     showConfirmButton: false,
-                    timer: 1500
+                    background: '#006d6d',
+                    color: 'white',
+                    timerProgressBar: true,
+                    toast: true,
+                    timer: 3500
                 });
                 document.getElementById('registrar').value = "registrar";
                 form.reset();
@@ -247,7 +264,11 @@ registrar.addEventListener("click", () => {
                     icon: 'error',
                     title: 'Usuario no creado, ya existe',
                     showConfirmButton: false,
-                    timer: 1500
+                    background: '#006d6d',
+                    color: 'white',
+                    timerProgressBar: true,
+                    toast: true,
+                    timer: 3500
                 });
                 document.getElementById('registrar').value = "registrar";
                 form.reset();
@@ -255,9 +276,13 @@ registrar.addEventListener("click", () => {
             } else {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Modificado',
+                    title: 'Camarero modificado correctamente',
                     showConfirmButton: false,
-                    timer: 1500
+                    background: '#006d6d',
+                    color: 'white',
+                    timerProgressBar: true,
+
+                    timer: 3500
                 });
                 registrar.value = "Registrar";
                 idp.value = "";

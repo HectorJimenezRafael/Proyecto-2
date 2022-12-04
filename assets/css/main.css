@@ -12,6 +12,19 @@
     display: none;
 }
 
+.subir {
+    padding: 5px 10px;
+    background: #006d6d;
+    color: #fff;
+    border: 0px solid #fff;
+    border-radius: 30px;
+}
+
+.subir:hover {
+    color: #fff;
+    background: #8eb9d6;
+}
+
 .caja {
     position: fixed;
     margin: 50px auto;

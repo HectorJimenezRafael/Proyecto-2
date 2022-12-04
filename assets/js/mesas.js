@@ -12,7 +12,7 @@ function reiniciar() {
 function mostrar() {
     if (document.getElementById('buscar_nombre').style.display == 'none') {
         document.getElementById('buscar_nombre').style.display = 'block';
-        document.getElementById('boton_buscar').value = "Actualizar"
+
     } else {
         document.getElementById('buscar_nombre').style.display = 'none';
     }
@@ -142,13 +142,16 @@ buscar_lugar.addEventListener("change", () => {
 
 function Eliminar(id) {
     Swal.fire({
-        title: 'Esta seguro de eliminar?',
+        title: '¿Quiere eliminar esta mesa?',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si!',
-        cancelButtonText: 'NO'
+        confirmButtonColor: '#3894a3',
+        cancelButtonColor: '#2f414F',
+        confirmButtonText: 'Si',
+        background: '#006d6d',
+        color: 'white',
+        cancelButtonText: 'Cancelar'
+
     }).then((result) => {
         if (result.isConfirmed) {
 
@@ -165,9 +168,13 @@ function Eliminar(id) {
                         ListarProductos('', '', '');
                         Swal.fire({
                             icon: 'success',
-                            title: 'Eliminado',
+                            title: 'Mesa retirada correctamente',
                             showConfirmButton: false,
-                            timer: 1500
+                            background: '#006d6d',
+                            color: 'white',
+                            timerProgressBar: true,
+
+                            timer: 3500
                         })
                     }
                 }
@@ -200,18 +207,26 @@ registrar.addEventListener("click", () => {
             if (ajax.responseText == "ok") {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Registrado',
+                    title: 'Mesa creada correctamente',
+                    background: '#006d6d',
+                    color: 'white',
                     showConfirmButton: false,
-                    timer: 1500
+                    timerProgressBar: true,
+                    timer: 3500
                 });
                 form.reset();
                 ListarProductos('', '', '');
             } else if (ajax.responseText == "campos_vacios") {
                 Swal.fire({
                     icon: 'error',
+
                     title: 'Campos no rellenados',
                     showConfirmButton: false,
-                    timer: 1500
+                    background: '#006d6d',
+                    color: 'white',
+                    timerProgressBar: true,
+                    toast: true,
+                    timer: 3500
                 });
                 form.reset();
                 ListarProductos('', '', '');
@@ -220,16 +235,24 @@ registrar.addEventListener("click", () => {
                     icon: 'error',
                     title: 'Formato del archivo incorrecto',
                     showConfirmButton: false,
-                    timer: 1500
+                    background: '#006d6d',
+                    color: 'white',
+                    timerProgressBar: true,
+                    toast: true,
+
+                    timer: 3500
                 });
                 form.reset();
                 ListarProductos('', '', '');
             } else {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Modificado',
+                    title: 'Mesa modificada correctamente',
                     showConfirmButton: false,
-                    timer: 1500
+                    background: '#006d6d',
+                    color: 'white',
+                    timerProgressBar: true,
+                    timer: 3500
                 });
                 registrar.value = "Registrar";
                 idp.value = "";

@@ -84,7 +84,7 @@ session_start();
         <div class="row">
             <div class="col-lg-4">
                 <div class="card" style="border-radius: 30px;">
-                    <div class="card-header  titulo2" style="background-color: #8eb9d6;border-radius: 30px;">
+                    <div class="card-header  titulo2" style="background-color: #8eb9d6;border-radius: 30px 30px 0px 0px;">
                         <h3  class="text-center">Mesas <i class="fa-solid fa-chair"></i></h3>
                     </div>
                     <div class="card-body">
@@ -94,33 +94,39 @@ session_start();
                                 <input type="hidden" name="idp" id="idp" value="">
                                 <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control">
                             </div>
+                            <br>
                             <div class="form-group">
                                 <label for="lugar">Lugar</label>
                                <br>
-                                <select name="lugar" id="lugar">
+                                <select name="lugar" id="lugar" class="select-css">
                                     <option value="1">Interior</option>
                                     <option value="2">Terraza</option>
                                     <option value="3">Vip</option>
                                 </select>
                             </div>
+                            <br>
                             <div class="form-group">
                             <label for="capacidad">Capacidad</label>
                             <br>
-                                <select name="capacidad" id="capacidad">
+                                <select name="capacidad" id="capacidad"  class="select-css-n">
                                     <option value="2">2</option>
                                     <option value="4">4</option>
                                     <option value="6">6</option>
-                                    <option value="6">8</option>
+                                    <option value="8">8</option>
                                 </select>
                             </div>
                             <br>
-                            <input type="file" name="imagen">
+                            <label for="imagen" >
+                            Imagen <i class="fas fa-cloud-upload-alt"></i> 
+                            </label>
+                            <input type="file" name="imagen" id="imagen" class="subir" >
                             <br>
                             <!-- <input type="file" name="imagen" id="imagen" placeholder="nombre" class="form-control"> -->
                             
                          
                           <br>
                             <div class="form-group" style="text-align: center;">
+                            
                                 <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block boton_in">
                             </div>
                         </form>
@@ -135,14 +141,15 @@ session_start();
                 <div class="container_table">
                 <div class="row" style="width:100%;">
                     <div class="col-lg-6 ml-auto" style="width:100%;text-align:center;">
-                    <button class="boton_in" id="boton_buscar" onclick="mostrar()"> Buscar <i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="boton_in" id="boton_buscar" onclick="mostrar()">  Buscar <i class="fa-solid fa-magnifying-glass"></i></button>
+                   
                         <form action="" method="post" id="busqueda">
                             <div class="form-group2">
                                 
                               <div style="display: flex;gap:15px;margin-top:10px;width:100%;">
                                 <input style="display: none;" type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Nombre..." class="form-control">
                                 <p id="titulo_lugar" style="margin-top: 10px;font-size: 20px;color:white;display: none;">Lugar </p>
-                                <select style="display: none;" name="buscar_lugar" id="buscar_lugar">
+                                <select style="display: none;" name="buscar_lugar" id="buscar_lugar" >
                                 <option value="">Indiferente</option>
                                     <option value="1">Interior</option>
                                     <option value="2">Terraza</option>
@@ -154,7 +161,7 @@ session_start();
                                     <option value="2">2</option>
                                     <option value="4">4</option>
                                     <option value="6">6</option>
-                                    <option value="6">8</option>
+                                    <option value="8">8</option>
                                 </select>
                               
                                 </div>
@@ -166,8 +173,8 @@ session_start();
                 <br>
                 <br>
                 <div class="scroll">
-                <table class="table table-hover table-light  "  >
-                    <thead >
+                <table class="table table-hover   "  >
+                    <thead class="bg-info" >
                         <tr>
                         <th>ID</th>
                             <th>Nombre</th>
@@ -177,7 +184,7 @@ session_start();
                             <th>Eliminar</th>
                         </tr>
                     </thead>
-                    <tbody id="resultado">
+                    <tbody class="table-info"id="resultado">
 
                     </tbody>
                     </div>
