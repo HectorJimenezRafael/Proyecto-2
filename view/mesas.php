@@ -95,13 +95,30 @@ session_start();
                                 <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control">
                             </div>
                             <br>
+                            <?php
+                            require_once '../include/connection.php';
+                            $sql="SELECT * FROM tbl_lugar;";
+
+                            $query = $pdo->prepare($sql);
+
+                            $query->execute();
+
+                            $lugares = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+                            ?>
                             <div class="form-group">
                                 <label for="lugar">Lugar</label>
                                <br>
                                 <select name="lugar" id="lugar" class="select-css">
-                                    <option value="1">Interior</option>
-                                    <option value="2">Terraza</option>
-                                    <option value="3">Vip</option>
+                                <?php
+                                foreach ($lugares as $lugar ) {
+                                    ?>
+                              <option value=<?php echo $lugar['id']; ?>><?php echo $lugar['lugar_recurso'];  ?> </option>
+                               <?php
+                                }
+                                ?>
+                                   
                                 </select>
                             </div>
                             <br>
@@ -151,9 +168,13 @@ session_start();
                                 <p id="titulo_lugar" style="margin-top: 10px;font-size: 20px;color:white;display: none;">Lugar </p>
                                 <select style="display: none;" name="buscar_lugar" id="buscar_lugar" >
                                 <option value="">Indiferente</option>
-                                    <option value="1">Interior</option>
-                                    <option value="2">Terraza</option>
-                                    <option value="3">Vip</option>
+                                <?php
+                                foreach ($lugares as $lugar ) {
+                                    ?>
+                              <option value=<?php echo $lugar['id']; ?>><?php echo $lugar['lugar_recurso'];  ?> </option>
+                               <?php
+                                }
+                                ?>
                                 </select>
                                 <p id="titulo_capacidad" style="margin-top: 10px;font-size: 20px;color:white;display: none;">Capacidad </p>
                                 <select style="display: none;" name="buscar_capacidad" id="buscar_capacidad">

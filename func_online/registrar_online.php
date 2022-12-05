@@ -13,6 +13,7 @@ $telefono=$_POST['phone'];
 // ---------
 $hora=$_POST['hora'];
 
+
 $dia=$_POST['fecha'];
 
 $capacidad=$_POST['personas'];
@@ -43,12 +44,25 @@ $resultado=$query->fetchAll(PDO::FETCH_ASSOC);
 if (count($resultado)==1) {
     foreach ($resultado as $mesa) {
         // echo $id_mesa=$mesa['id'];
-      $id_mesa=$mesa['id'];
+       $id_mesa=$mesa['id'];
     }
 
+//     echo $hora;
+// $sql="SELECT `id` FROM `tbl_horas` WHERE hora=:tiempo";
+// $query=$pdo->prepare($sql);
+
+// $query->bindParam(":tiempo", $hora);
+// $query->execute();
+
+// $hora_entrada=$query->fetchAll(PDO::FETCH_ASSOC);
+// var_dump($hora_entrada);
+// foreach($hora_entrada as $entrada){
+//  echo  $id_salida=$entrada['id'];
+// }
+
     $sql="INSERT INTO `tbl_reserva_online`( `nombre_res_o`, `apellido_res_o`, `correo_res_o`, `telefono_res_o`, `id_mesa`, 
-    `id_lugar`, `dia`, `hora_res_o`, `ocupacion_res_o`) 
-    VALUES (:nombre,:apellido,:correo,:telefono,:mesa,:lugar,:dia,:hora,:ocupacion)";
+    `id_lugar`, `dia`, `hora_res_o`, `ocupacion_res_o`,`id_hora_res_o_final`) 
+    VALUES (:nombre,:apellido,:correo,:telefono,:mesa,:lugar,:dia,:hora,:ocupacion,:salida)";
 
     $query=$pdo->prepare($sql);
     
@@ -69,6 +83,8 @@ if (count($resultado)==1) {
     $query->bindParam(":ocupacion", $capacidad);
 
     $query->bindParam(":lugar", $lugar);
+
+    $query->bindParam(":salida",  $hora);
 
     $query->execute();
 

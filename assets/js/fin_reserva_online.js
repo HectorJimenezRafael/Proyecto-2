@@ -1,12 +1,9 @@
 window.onload = function() {
-    console.log("hola");
+    function fin_reserva_online() {
 
-
-    function reserva_online() {
-
-        console.log("dentro");
+        console.log("dentro2");
         var ajax = new XMLHttpRequest();
-        ajax.open('POST', '../online/reserva_online.php');
+        ajax.open('POST', '../online/fin_reserva_online.php');
         ajax.onload = function() {
             if (ajax.status === 200) {
                 // alert(ajax.responseText)
@@ -20,14 +17,11 @@ window.onload = function() {
         ajax.send();
     }
 
-    reserva_online('');
+    fin_reserva_online('');
 
     setInterval(function() {
-        reserva_online()
+        fin_reserva_online()
 
     }, 1000);
-
-
-
 
 }

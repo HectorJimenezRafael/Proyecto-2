@@ -82,28 +82,10 @@ session_start();
 </div>
 
 
-<?php
-require_once '../include/connection.php';
-$sql="SELECT * FROM tbl_lugar;";
-
-$query = $pdo->prepare($sql);
-
-$query->execute();
-
-$resultado = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
-?>
 
-<?php
-foreach ($resultado as $uwu ) {
-  ?>
-
- 
-  <?php
-}
-?>
-<div class="column-3_reserva">
+<!-- <div class="column-3_reserva">
     <select class="custom-select" name=lugar id=lugar>
       <option value="%">Todos</option>
 
@@ -125,7 +107,7 @@ foreach ($resultado as $uwu ) {
 
     </div>
 </div>
-    
+     -->
 
 
 
@@ -154,6 +136,7 @@ foreach ($resultado as $uwu ) {
 <script src="../assets/js/form_reserva.js"></script>
 <script src="../assets/js/nav.js"></script>
 <script src="../assets/js/reserva_online.js"></script>
+<!-- <script src="../assets/js/fin_reserva_online.js"></script> -->
 <script>getMesas()</script>
 
 <br>

@@ -154,7 +154,7 @@ registrar.addEventListener("click", () => {
             if (ajax.responseText == "ok") {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Mesa creada correctamente',
+                    title: 'Lugar creado correctamente',
                     background: '#006d6d',
                     color: 'white',
                     showConfirmButton: false,
@@ -194,7 +194,7 @@ registrar.addEventListener("click", () => {
             } else {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Mesa modificada correctamente',
+                    title: 'Lugar modificado correctamente',
                     showConfirmButton: false,
                     background: '#006d6d',
                     color: 'white',

@@ -144,6 +144,7 @@ body {
 /* numero de clientes */
 
 .numero-clientes {
+    display: none;
     background-color: #bfb6b9;
     border-radius: 25px;
     color: white;
