@@ -42,9 +42,9 @@ session_start();
       echo "<script>window.location.href = '../view/login.php';</script>";
     }
 
-    if ($_SESSION['admin']!=1) {
-      echo "<script>window.location.href = '../view/inicio.php?en=no';</script>";
-    }
+    // if ($_SESSION['admin']!=1) {
+    //   echo "<script>window.location.href = '../view/inicio.php?en=no';</script>";
+    // }
     ?>
 
 
@@ -85,31 +85,31 @@ session_start();
             <div class="col-lg-4">
                 <div class="card" style="border-radius: 30px;">
                     <div class="card-header  titulo2" style="background-color: #8eb9d6;border-radius: 30px 30px 0px 0px;">
-                        <h3  class="text-center">Camareros <i class="fa-solid fa-kitchen-set"></i></h3>
+                        <h3  class="text-center">Lugares <i class="fa-solid fa-map-location-dot"></i></h3>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post" id="frm">
-                            <div class="form-group">
+                        <form action="" method="post" id="frm" enctype="multipart/form-data">
+                        <div class="form-group">
                                 <label for="">Nombre</label>
                                 <input type="hidden" name="idp" id="idp" value="">
                                 <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control">
                             </div>
-                            <div class="form-group">
-                                <label for="">Apellido</label>
-                                <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Teléfono</label>
-                                <input type="text" name="telefono" id="telefono" placeholder="Teléfono" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Correo</label>
-                                <input type="text" name="correo" id="correo" placeholder="Correo" class="form-control">
-                            </div>
+                            <br>
+                           
+                            <br>
+                          
+                            <br>
+                            <label for="imagen" >
+                            Icono <i class="fas fa-cloud-upload-alt"></i> 
+                            </label>
+                            <input type="file" name="imagen" id="imagen" class="subir" >
+                            <br>
+                            <!-- <input type="file" name="imagen" id="imagen" placeholder="nombre" class="form-control"> -->
                             
                          
                           <br>
                             <div class="form-group" style="text-align: center;">
+                            
                                 <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block boton_in">
                             </div>
                         </form>
@@ -124,41 +124,35 @@ session_start();
                 <div class="container_table">
                 <div class="row" style="width:100%;">
                     <div class="col-lg-6 ml-auto" style="width:100%;text-align:center;">
-                    <button class="boton_in" onclick="mostrar()"> Buscar <i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="boton_in" id="boton_buscar" onclick="mostrar()">  Buscar <i class="fa-solid fa-magnifying-glass"></i></button>
+                   
                         <form action="" method="post" id="busqueda">
                             <div class="form-group2">
                                 
                               <div style="display: flex;gap:15px;margin-top:10px;width:100%;">
                                 <input style="display: none;" type="text" name="buscar_nombre" id="buscar_nombre" placeholder="Nombre..." class="form-control">
-                               
-                                <input style="display: none;"  type="text" name="buscar_apellido" id="buscar_apellido" placeholder="Apellido..." class="form-control">
                                 
-                                <input style="display: none;"  type="text" name="buscar_telefono" id="buscar_telefono" placeholder="Teléfono..." class="form-control">
-                                
-                                <input style="display: none;"  type="text" name="buscar_correo" id="buscar_correo" placeholder="Correo..." class="form-control">
+                              
                                 </div>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
                 <br>
                 <br>
                 <div class="scroll">
-                <table class="table table-hover  "  >
+                <table class="table table-hover   "  >
                     <thead class="bg-info" >
                         <tr>
-                            <th>ID <i class="fa-solid fa-address-book"></i></th>
-                            <th>Nombre <i class="fa-solid fa-address-card"></i></th>
-                            <th>Apellido <i class="fa-solid fa-address-card"></i></th>
-                            <th>Teléfono <i class="fa-solid fa-phone"></i></th>
-                            <th>Correo <i class="fa-solid fa-envelope"></i></th>
-                            <th>Modificar <i class="fa-solid fa-user-pen"></i></th>
-                            <th>Eliminar <i class="fa-solid fa-user-xmark"></i></th>
-                            
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Icono</th>
+                            <th>Modificar</th>
+                            <th>Eliminar</th>
                         </tr>
                     </thead>
-                    
-                    <tbody class="table-info" id="resultado">
+                    <tbody class="table-info"id="resultado">
 
                     </tbody>
                     </div>
@@ -167,7 +161,7 @@ session_start();
             </div>
         </div>
     </div>
-    <script src="../assets/js/camareros.js"></script>
+    <script src="../assets/js/lugares.js"></script>
 
 </body>
 </html>

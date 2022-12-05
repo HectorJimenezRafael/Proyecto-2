@@ -32,7 +32,7 @@ const reserva = async(id) => {
             <p><input type="number" id=num_clientes placeholder="" value="${resul.data.data[2]}"/></p>
        
             <p><button class='boton_buscar' onclick="ejecutarReserva(${resul.data.data[0]})" >Ocupar</button></p>
-            <p><button class='boton_buscar' onclick="borrar_mesa(${resul.data.data[0]})" >Borrar mesa</button></p>
+            
             <p><button class='boton_in' onclick="incidencia(${resul.data.data[0]},'${resul.data.data[1]}')" >Incidencia</button></p>
 
             </div>`;

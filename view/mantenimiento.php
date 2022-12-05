@@ -148,13 +148,13 @@ session_start();
                 <table class="table table-hover  "  >
                     <thead class="bg-info">
                         <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Teléfono</th>
-                            <th>Correo</th>
-                            <th>Modificar</th>
-                            <th>Eliminar</th>
+                            <th>ID <i class="fa-solid fa-address-book"></i></th>
+                            <th>Nombre <i class="fa-solid fa-address-card"></i></th>
+                            <th>Apellido <i class="fa-solid fa-address-card"></i></th>
+                            <th>Teléfono <i class="fa-solid fa-phone"></i></th>
+                            <th>Correo <i class="fa-solid fa-envelope"></i></th>
+                            <th>Modificar <i class="fa-solid fa-user-pen"></i></th>
+                            <th>Eliminar <i class="fa-solid fa-user-xmark"></i></th>
                             
                         </tr>
                     </thead>

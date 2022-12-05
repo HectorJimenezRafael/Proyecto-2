@@ -85,6 +85,10 @@ session_start();
 <a href="mesas.php">Mesas</a> <i class="fa-solid fa-chair"></i> <i class="fa-solid fa-pen-to-square"></i>
 </div>
 
+<div class="caja">
+<a href="lugares.php">Zonas restaurante</a> <i class="fa-solid fa-map-location-dot"></i> <i class="fa-solid fa-pen-to-square"></i>
+</div>
+
 
 
 <div class="caja">
@@ -92,7 +96,7 @@ session_start();
 </div>
 
 <div class="caja">
-<a href="cambiar_con.php">Cambiar contraseña</a> <i class="fa-solid fa-unlock"></i> <i class="fa-solid fa-pen-to-square"></i>
+<a href="cambiar_con.php">Cambiar contraseña</a> <i class="fa-solid fa-user-lock"></i> <i class="fa-solid fa-pen-to-square"></i>
 </div>
 
 

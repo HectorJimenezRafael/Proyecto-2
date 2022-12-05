@@ -79,15 +79,23 @@ if ($_SESSION['admin']!=1) {
 <br>
 <div class="caja">
 <form action="../include/update_contra.php" method="post">
-
-<input type="text" name="correo" placeholder="Correo">
+<img src="../assets/img/password.png" style="width: 90px;" alt="">
+    <br>
 <br>
-<input type="text" name="contra_antigua" placeholder="Contraseña antigua">
-<br>
-<input type="text" name="contra_nueva" placeholder="Contraseña nueva">
+<input type="text"  class="escribir_con"  name="correo" placeholder="Correo">
 <br>
 <br>
-<input type="submit" value="Cambiar">
+<br>
+<input type="text"  class="escribir_con"  name="contra_antigua" placeholder="Contraseña actual">
+<br>
+<br>
+<br>
+<input type="text"   class="escribir_con" name="contra_nueva" placeholder="Contraseña nueva">
+<br>
+<br>
+<br>
+<button class="boton con" type="submit"><span>Cambiar</span></button>
+<!-- <input type="submit" value="Cambiar"> -->
 
 </form>
 </div>
@@ -102,15 +110,21 @@ if ($_SESSION['admin']==1) {
 <br>
 <div class="caja">
 <form action="../include/update_contra.php" method="post">
+    <img src="../assets/img/password.png" style="width: 90px;" alt="">
+    <br>
+<br>
+<input type="text" class="escribir_con" name="correo" placeholder="Correo">
+<br>
+<br>
+<br>
+<input type="text"  class="escribir_con"  name="contra_nueva" placeholder="Contraseña nueva">
+<br>
+<br>
+<br>
+<button class="boton con" type="submit"><span>Cambiar</span></button>
 
-<input type="text" name="correo" placeholder="Correo">
-<br>
 
-<br>
-<input type="text" name="contra_nueva" placeholder="Contraseña nueva">
-<br>
-<br>
-<input type="submit" value="Cambiar">
+
 
 </form>
 </div>
