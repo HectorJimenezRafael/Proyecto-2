@@ -55,20 +55,25 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
         <form action="../func_online/registrar_online.php" method="POST">
             <p>
                 <label>Nombre <i class="fa-solid fa-address-card"></i></label>
-                <input type="text" name="Nombre">
+                <input type="text" name="Nombre" id="Nombre">
+                <span id="error_nombre" style="color:darkgoldenrod;display:none;">Error en el campo nombre <i class="fa-solid fa-circle-exclamation"></i></span>
             </p>
             <p>
                 <label>Apellido <i class="fa-solid fa-address-card"></i></label>
-                <input type="text" name="Apellido">
+                <input type="text" name="Apellido" id=Apellido>
+                <span id="error_apellido" style="color:darkgoldenrod;display:none;">Error en el campo apellido <i class="fa-solid fa-circle-exclamation"></i></span>
             </p>
             <p>
             <label>Correo <i class="fa-solid fa-envelope"></i></label>
-                <input type="email" name="correo">
+                <input type="email" name="correo" id="Correo">
+                <span id="error_correo" style="color:darkgoldenrod;display:none;">Error en el campo correo <i class="fa-solid fa-circle-exclamation"></i></span>
+
             </p>
             <p>
             <label>Teléfono <i class="fa-solid fa-phone"></i></label>
-                <input type="tel" name="phone">
-                
+                <input type="tel" name="phone" id="Phone">
+                <span id="error_phone" style="color:darkgoldenrod;display:none;">Error en el campo teléfono<i class="fa-solid fa-circle-exclamation"></i></span>
+
             </p>
             <p>
             <label>Personas <i class="fa-solid fa-users"></i></label>
@@ -84,6 +89,8 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
             <?php $hoy= date("Y-m-d"); ?>
             <label>Fecha <i class="fa-solid fa-calendar-days"></i></label>
                 <input type="date" min="<?php echo$hoy;?>" name="fecha" id="fecha">
+                <span id="error_fecha" style="color:darkgoldenrod;display:none;">Error en el campo fecha<i class="fa-solid fa-circle-exclamation"></i></span>
+
                 
             </p>
             <p>
@@ -125,7 +132,7 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
                 <textarea name="message" rows="2"></textarea>
             </p> -->
             <p class="block">
-                <button type="submit" >
+                <button type="submit" onclick='return validar()' >
                     RESERVAR <i class="fa-solid fa-arrows-to-circle"></i>
                 </button>
             </p>
@@ -153,6 +160,7 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <script src="../assets/js/horario.js"></script>
+<script src="../assets/js/validar.js"></script>
 
 
 </body>
