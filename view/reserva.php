@@ -121,7 +121,10 @@ session_start();
   <input type="hidden" id="user" value=<?php echo $_SESSION['usuario_id']; ?> />
   <div class="Mymodal">
     <div style="background-color: #0d2033;">
-  <a class="cancel"  href="#"><i class="fa-solid fa-circle-xmark"></i></a>
+  <a  class="cancel"  href="#">
+  
+    <i class="fa-solid fa-circle-xmark"></i>
+  </a>
   </div>
   <br>
     <h2  id=titulo></h2>

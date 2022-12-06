@@ -89,6 +89,10 @@ session_start();
 <a href="lugares.php">Zonas restaurante</a> <i class="fa-solid fa-map-location-dot"></i> <i class="fa-solid fa-pen-to-square"></i>
 </div>
 
+<div class="caja">
+<a href="re_programadas.php">Reservas programadas</a> <i class="fa-solid fa-calendar-days"></i> <i class="fa-solid fa-clipboard"></i>
+</div>
+
 
 
 <div class="caja">
