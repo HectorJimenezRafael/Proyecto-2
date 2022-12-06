@@ -94,6 +94,7 @@ session_start();
 
 <script>info_get_mesas_rotas()</script>
 <script src="../assets/js/validaciones.js"></script>
+<script src="../assets/js/reserva_online.js"></script>
 <br>
     <br>
     <br>

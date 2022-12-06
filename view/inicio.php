@@ -105,7 +105,7 @@ session_start();
 
 
 <!-- sweetalert2 -->
-
+<script src="../assets/js/reserva_online.js"></script>
 
  <!-- ACCESO DENEGADO -->
 <?php

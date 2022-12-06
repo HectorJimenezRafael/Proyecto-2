@@ -15,7 +15,7 @@ $pass = hash('sha256', $pass);
 
 
 
-$sql= "SELECT * FROM tbl_usuarios WHERE usuario_nombre=? and usuario_password=? and usuario_tipo=1;";
+$sql= "SELECT * FROM tbl_usuarios WHERE correo=? and usuario_password=? and usuario_tipo=1;";
 
 $stmt=$pdo->prepare($sql);
 
@@ -39,7 +39,7 @@ foreach ($resultado as $usu) {
 
 
 if ($entra_camarero==0) {
-    $sql= "SELECT * FROM tbl_usuarios WHERE usuario_nombre=? and usuario_password=? and usuario_tipo=2;";
+    $sql= "SELECT * FROM tbl_usuarios WHERE correo=? and usuario_password=? and usuario_tipo=2;";
 
     $stmt=$pdo->prepare($sql);
     

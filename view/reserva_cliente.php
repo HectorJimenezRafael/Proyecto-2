@@ -161,7 +161,7 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
 
 <script src="../assets/js/horario.js"></script>
 <script src="../assets/js/validar.js"></script>
-
+<script src="../assets/js/reserva_online.js"></script>
 
 </body>
 

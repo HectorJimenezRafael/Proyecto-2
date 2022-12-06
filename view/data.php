@@ -127,6 +127,7 @@ session_start();
 <script src="../assets/js/alert-server.js"></script>
 <script src="../assets/js/validaciones.js"></script>
 <script src="../assets/js/stats.js"></script>
+<script src="../assets/js/reserva_online.js"></script>
 <script>
 getData();
 getReservas();

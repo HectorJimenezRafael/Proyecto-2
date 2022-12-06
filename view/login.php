@@ -49,8 +49,8 @@ session_destroy();
     <div id="login">
     <form class="form-login" action="../controller/login_controller.php" method="post">
     <fieldset class="clearfix">
-    <small id="error_nombre" class="alerts"><b><i class="fa-solid fa-circle-exclamation"></i> Error en el campo nombre </b></small> 
-<p><span class="fontawesome-user"></span><input class="casilla log-input" type="text" id="usuario_nombre" name="usuario_nombre" placeholder="Introduce tu nombre" required></p>
+    <small id="error_nombre" class="alerts"><b><i class="fa-solid fa-circle-exclamation"></i> Error en el campo correo </b></small> 
+<p><span class="fontawesome-user"></span><input class="casilla log-input" type="text" id="usuario_nombre" name="usuario_nombre" placeholder="Introduce tu correo" required></p>
 
 <small id="error_contra" class="alerts"><b><i class="fa-solid fa-circle-exclamation"></i> Error en el campo contraseña </b></small>
 <p><span class="fontawesome-lock"></span><input class="casilla log-input" type="password" id="contra_usu" name="contra_usu" placeholder="Introduce la contraseña" required></p>
@@ -82,7 +82,7 @@ Sign in  <i class="fa-solid fa-martini-glass"></i>
 
 </div>
 </body>
-
+<script src="../assets/js/reserva_online.js"></script>
 <!-- SWEET ALERTS -->
 
 <!-- Nombre, contra o ambas incorrectas -->
@@ -96,7 +96,7 @@ Swal.fire({
     color:'white',
     icon: 'error',
     title: 'UPS...',
-    text: 'Nombre de usuario o contraseña incorrectas'
+    text: 'Correo o contraseña incorrectas'
 
 
 })

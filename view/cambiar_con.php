@@ -134,7 +134,7 @@ if ($_SESSION['admin']==1) {
 
 
 
-
+<script src="../assets/js/reserva_online.js"></script>
 
 <!-- sweetalert2 -->
 

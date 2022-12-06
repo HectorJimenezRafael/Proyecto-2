@@ -168,6 +168,7 @@ session_start();
         </div>
     </div>
     <script src="../assets/js/mantenimiento.js"></script>
+    <script src="../assets/js/reserva_online.js"></script>
 
 </body>
 </html>

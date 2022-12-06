@@ -162,6 +162,7 @@ session_start();
         </div>
     </div>
     <script src="../assets/js/lugares.js"></script>
+    <script src="../assets/js/reserva_online.js"></script>
 
 </body>
 </html>

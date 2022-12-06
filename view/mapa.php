@@ -79,6 +79,8 @@ session_start();
 <script>
   drawCanvas();
 </script>
+
+<script src="../assets/js/reserva_online.js"></script>
 <br>
     <br>
     <br>

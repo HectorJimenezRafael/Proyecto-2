@@ -31,7 +31,7 @@ if (count($hay_reserva)>=1) {
     
     
              $sql2="INSERT INTO tbl_reserva ( `id_usuario`, `id_recurso`, `data_ini`, `num_clientes`,`finalizado`) 
-             VALUES (2,:mesa,current_timestamp,:ocupacion,0)";
+             VALUES (47,:mesa,current_timestamp,:ocupacion,0)";
              $query=$pdo->prepare($sql2);
              $query->bindParam(":mesa",  $id_mesa);
              $query->bindParam(":ocupacion",  $ocupacion);

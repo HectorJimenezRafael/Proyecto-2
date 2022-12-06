@@ -90,6 +90,7 @@ session_start();
     </table>
 </div>
 <script src="../assets/js/incidencias.js"></script>
+<script src="../assets/js/reserva_online.js"></script>
 <script>getIncidenciasResol()</script>
 <!-- <div class="main-container">
     <table class="div-table ">
