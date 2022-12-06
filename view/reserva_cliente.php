@@ -81,8 +81,9 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
                 
             </p>
             <p>
+            <?php $hoy= date("Y-m-d"); ?>
             <label>Fecha <i class="fa-solid fa-calendar-days"></i></label>
-                <input type="date" min="<?php echo date("Y-m-d");?>" name="fecha" id="fecha">
+                <input type="date" min="<?php echo$hoy;?>" name="fecha" id="fecha">
                 
             </p>
             <p>
@@ -194,6 +195,78 @@ Swal.fire({
     icon: 'error',
     title: 'LO SENTIMOS',
     text: 'No hay más mesas disponibles con estás caracteríticas'
+
+
+})
+
+    </script>
+    <?php
+}
+}
+
+?>
+
+
+<!-- CAMPOS VACIOS-->
+<?php
+if (isset($_GET['mesas'])) {
+if ($_GET['mesas']=='vacio') {
+    ?>
+    <script>
+Swal.fire({
+    background:'#486b7c',
+    color:'white',
+    icon: 'error',
+    title: 'UPS',
+    text: 'Campos no rellenados'
+
+
+})
+
+    </script>
+    <?php
+}
+}
+
+?>
+
+
+<!-- Error de formato-->
+<?php
+if (isset($_GET['mesas'])) {
+if ($_GET['mesas']=='for') {
+    ?>
+    <script>
+Swal.fire({
+    background:'#486b7c',
+    color:'white',
+    icon: 'error',
+    title: 'ERROR',
+    text: 'Formato de los campos incorrecto'
+
+
+})
+
+    </script>
+    <?php
+}
+}
+
+?>
+
+
+<!-- Error de fecha-->
+<?php
+if (isset($_GET['mesas'])) {
+if ($_GET['mesas']=='edate') {
+    ?>
+    <script>
+Swal.fire({
+    background:'#486b7c',
+    color:'white',
+    icon: 'error',
+    title: 'ERROR',
+    text: 'Fecha sobrepasada'
 
 
 })

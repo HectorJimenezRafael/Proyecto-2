@@ -1,8 +1,28 @@
 <?php
 require_once '../include/connection.php';
 
+if (empty($_POST['Nombre']) || empty($_POST['Apellido']) || empty($_POST['phone']) || empty($_POST['correo']) || empty($_POST['hora']) || empty($_POST['fecha']) || empty($_POST['personas']) || empty($_POST['lugar'])      ) {
+    
+    ?>
+    <script>location.href = '../view/reserva_cliente.php?mesas=vacio'</script>
+ <?php
+} else if (!(is_numeric($_POST['phone'])) || strlen($_POST['phone'])!=9 || !filter_var($_POST['correo'], FILTER_VALIDATE_EMAIL)) {
+    ?>
+    <script>location.href = '../view/reserva_cliente.php?mesas=for'</script>
+ <?php
+} else {
 
 
+
+    $dia=$_POST['fecha'];
+
+    $fecha_actual= date("Y-m-d");
+if ($dia<$fecha_actual) {
+    ?>
+    <script>location.href = '../view/reserva_cliente.php?mesas=edate'</script>
+ <?php
+} else {
+      
 $nombre=$_POST['Nombre'];
 
 $apellido=$_POST['Apellido'];
@@ -14,7 +34,7 @@ $telefono=$_POST['phone'];
 $hora=$_POST['hora'];
 
 
-$dia=$_POST['fecha'];
+
 
 $capacidad=$_POST['personas'];
 
@@ -97,3 +117,9 @@ if (count($resultado)==1) {
     <script>location.href = '../view/reserva_cliente.php?mesas=no'</script>
  <?php
 }
+}
+  
+}
+
+
+
