@@ -151,6 +151,7 @@ $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
        
        <img class="logo_res" src="../assets/img/logo.png" alt="">
        <br>
+       <a class="numeros" style="font-size: 20px;color: #5CA4A9;" href="tel:+34678567876"><i class="fa-solid fa-phone-volume"></i></a>
        <br>
        <br>
        <img class="imagen_res" src="../assets/img/restaurante.webp" alt="">

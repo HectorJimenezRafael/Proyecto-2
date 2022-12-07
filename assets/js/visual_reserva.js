@@ -34,28 +34,28 @@ const getMesas = async() => {
         // if (comprobar == 'interior') {
         // }
         if (resul.data[i][3] == 'libre') {
-            let box = `<div style='background-color:green;' class='box'>
+            let box = `<div style='background-color:#24F586; ' class='box'>
             <h4 class="flex titulo"> <b> Mesa: ${resul.data[i][1]} </b></h4>
             <p>Lugar: ${resul.data[i][4]}<p>
-            <p><img onclick="reserva(${resul.data[i][0]})" class='img_estado' src='${resul.data[i][8]} '></p>
+            <p><img style='width:200px;' onclick="reserva(${resul.data[i][0]})" class='img_estado' src='${resul.data[i][8]} '></p>
 
             </div>
             `;
             padre.innerHTML += box;
         } else if (resul.data[i][3] == 'mantenimiento') {
-            let box = `<div style='background-color:yellow;' class='box'>
+            let box = `<div style='background-color:#F6EE64;' class='box'>
             <h4 class="flex titulo"> <b> Mesa: ${resul.data[i][1]} </b></h4>
             <p>Lugar: ${resul.data[i][4]}<p>
-            <p><img onclick="reserva(${resul.data[i][0]})" class='img_estado' src='${resul.data[i][8]} '></p>
+            <p><img style='width:200px;' onclick="reserva(${resul.data[i][0]})" class='img_estado' src='${resul.data[i][8]} '></p>
 
             </div>
             `;
             padre.innerHTML += box;
         } else if (resul.data[i][3] == 'ocupado') {
-            let box = `<div style='background-color:red;' class='box'>
+            let box = `<div style='background-color:#FF4D29;' class='box'>
             <h4 class="flex titulo"> <b> Mesa: ${resul.data[i][1]} </b></h4>
             <p>Lugar: ${resul.data[i][4]}<p>
-            <p><img onclick="reserva(${resul.data[i][0]})" class='img_estado' src='${resul.data[i][8]} '></p>
+            <p><img style='width:200px;' onclick="reserva(${resul.data[i][0]})" class='img_estado' src='${resul.data[i][8]} '></p>
 
             </div>
             `;
