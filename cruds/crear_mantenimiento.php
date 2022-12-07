@@ -40,7 +40,14 @@ if (count($resultado)==0) {
     }else{
         
         $id = $_POST['idp'];
-
+        $query = $pdo->prepare("SELECT * FROM `tbl_usuarios`  WHERE NOT id=:id AND (telefono=:telefono OR correo=:correo) ");
+        $query->bindParam(":id", $id);
+        $query->bindParam(":telefono", $telefono);
+        $query->bindParam(":correo", $correo);
+        $query->execute();
+        $resultado=$query->fetchAll(PDO::FETCH_ASSOC);
+        
+        if (count($resultado)==0) {
         $query = $pdo->prepare("UPDATE tbl_usuarios SET usuario_nombre = :nombre, Apellido = :apellido,telefono=:telefono, correo=:correo WHERE id = :id");
         $query->bindParam(":nombre", $nombre);
         $query->bindParam(":apellido", $apellido);
@@ -51,6 +58,9 @@ if (count($resultado)==0) {
         $query->execute();
         $pdo = null;
         echo "modificado";
+        } else {
+            echo "repetido";
+        }
     }
     
 }
