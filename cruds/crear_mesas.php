@@ -64,6 +64,7 @@ else if (isset($_POST)) {
             $ruta=$ruta."/".$nombre_img;
             $tipo_archivo = $_FILES['imagen']['type'];//guardar el tipo del archivo
             if ($tipo_archivo=="image/jpeg" || $tipo_archivo=="image/jpg" || $tipo_archivo=="image/png" || $tipo_archivo=="image/gif" || $tipo_archivo=="image/webp") {
+                move_uploaded_file($archivo,$ruta);
                 $query = $pdo->prepare("UPDATE `tbl_recurso` SET nombre_mesa = :nombre, id_lugar = :lugar, capacidad=:capacidad,img_recurso=:imagen WHERE id = :id");
                 $query->bindParam(":nombre", $nombre);
                 $query->bindParam(":lugar", $lugar);
